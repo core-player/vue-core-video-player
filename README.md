@@ -7,7 +7,7 @@
 ## Installation
 
 ```bash
-npm install --save vue-core-video-player
+$ npm install --save vue-core-video-player
 ```
 
 

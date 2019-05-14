@@ -1,6 +1,6 @@
 {
   "name": "vue-core-video-player",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A Vue.js Plugin",
   "author": "JackPu <kakashjack@gmail.com>",
   "main": "dist/vue-core-video-player.common.js",
@@ -10,19 +10,19 @@
   "style": "dist/vue-core-video-player.css",
   "files": [
     "dist",
-    "src"
+    "src",
+    "README.md"
   ],
   "scripts": {
     "clean": "rimraf dist",
     "build": "node build/build.js",
     "build:dll": "webpack --progress --config build/webpack.config.dll.js",
     "lint": "yon run lint:js",
-    "lint:js": "eslintsrc/**/*.jss",
-    "lint:js:fix": "yon run lint:js -- --fix",
+    "lint:js": "eslint src/**/*.js",
+    "lint:js:fix": "yon run lint:js --fix",
     "lint:css": "stylelint src/**/*.{vue,css}",
     "lint:staged": "lint-staged",
-    "pretest": "yon run lint",
-    "test": "cross-env BABEL_ENV=test karma start test/karma.conf.js --single-run",
+    "test": "jest test",
     "dev": "webpack-dashboard -- webpack-dev-server --config build/webpack.config.dev.js --open",
     "dev:coverage": "cross-env BABEL_ENV=test karma start test/karma.conf.js",
     "prepublish": "yon run build"
@@ -38,10 +38,12 @@
   },
   "pre-commit": "lint:js",
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.29",
     "add-asset-html-webpack-plugin": "^2.0.0",
     "babel-core": "^6.24.0",
     "babel-eslint": "^7.2.0",
     "babel-helper-vue-jsx-merge-props": "^2.0.0",
+    "babel-jest": "^24.8.0",
     "babel-loader": "^7.0.0",
     "babel-plugin-istanbul": "^4.1.0",
     "babel-plugin-syntax-jsx": "^6.18.0",
@@ -56,12 +58,12 @@
     "cross-env": "^4.0.0",
     "css-loader": "^0.28.0",
     "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-config-vue": "^2.0.0",
     "eslint-plugin-import": "^2.17.2",
-    "eslint-plugin-vue": "^2.0.0",
+    "eslint-plugin-vue": "^5.2.2",
     "extract-text-webpack-plugin": "^2.1.0",
     "html-webpack-plugin": "^2.28.0",
+    "jest": "^24.8.0",
+    "jest-serializer-vue": "^2.0.2",
     "karma": "^1.7.0",
     "karma-chai-dom": "^1.1.0",
     "karma-chrome-launcher": "^2.1.0",
@@ -97,6 +99,7 @@
     "uglify-js": "^3.0.0",
     "uppercamelcase": "^3.0.0",
     "vue": "^2.3.0",
+    "vue-jest": "^3.0.4",
     "vue-loader": "^12.0.0",
     "vue-template-compiler": "^2.3.0",
     "webpack": "^2.5.0",
@@ -108,6 +111,36 @@
   },
   "peerDependencies": {
     "vue": "^2.3.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    },
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/jest-serializer-vue"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,vue}",
+      "!**/node_modules/**"
+    ],
+    "coverageDirectory": "./test/coverage",
+    "testMatch": [
+      "**/*.spec.js"
+    ],
+    "coverageReporters": [
+      "json",
+      "lcov"
+    ]
   },
   "dllPlugin": {
     "name": "vuePluginTemplateDeps",
@@ -126,10 +159,7 @@
       "style-loader/addStyles.js"
     ]
   },
-  "license": {
-    "type": "MIT",
-    "url": "http://www.opensource.org/licenses/mit-license.php"
-  },
+  "license": "MIT",
   "browserslist": [
     "last 2 versions"
   ]
