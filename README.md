@@ -1,16 +1,29 @@
-# vue-core-video-player
+# vue-core-video-player2
 
-[![npm](https://img.shields.io/npm/v/vue-core-video-player.svg)](https://www.npmjs.com/package/vue-core-video-player) [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
-
-> A Lightwight Video Player For Vue.js.
-
-## Installation
-
-```bash
-$ npm install --save vue-core-video-player
+## Project setup
+```
+npm install
 ```
 
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-## License
+### Compiles and minifies for production
+```
+npm run build
+```
 
-[MIT](http://opensource.org/licenses/MIT)
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
