@@ -1,29 +1,22 @@
-# vue-core-video-player2
+# vue-core-video-player
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
+
+## 🐦 Get Started
+
 ```
-npm run build
+npm install vue-core-video-player --save
 ```
 
-### Run your tests
-```
-npm run test
-```
+## 🖼 UI
 
-### Lints and fixes files
-```
-npm run lint
-```
+<img src="./UI/ui.png">
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[Adobe XD]('./vue-core-video-player-xd.xd')
+
+
+## 💐 Contribution
+Open pull request with improvements
+Discuss ideas in issues
+
