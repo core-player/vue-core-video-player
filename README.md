@@ -14,6 +14,7 @@ npm install vue-core-video-player --save
 <img src="./UI/ui.png">
 
 [Adobe XD]('./vue-core-video-player-xd.xd')
+[Behance]('https://www.behance.net/gallery/84820301/Web-VIdeo-Player')
 
 
 ## 💐 Contribution
