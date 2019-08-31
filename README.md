@@ -1,15 +1,36 @@
 # vue-core-video-player
 
+A ligy
 
 
 
-## 🐦 Get Started
+## Get Started
 
 ```
-npm install vue-core-video-player --save
+$ npm install vue-core-video-player --save
 ```
 
-## 🖼 UI
+``` vue
+<template>
+  <vue-core-video-player src="./videos/your_video.mp4"></vue-core-video-player>
+<template>
+
+<script>
+import VueCoreVideoPlayer from 'vue-core-video-player';
+
+export default {
+  name: 'app',
+  components: {
+    VueCoreVideoPlayer
+  }
+}
+
+</script>
+```
+
+
+
+## UI
 
 <img src="./UI/ui.png">
 
@@ -18,7 +39,8 @@ npm install vue-core-video-player --save
 [Behance]('https://www.behance.net/gallery/84820301/Web-VIdeo-Player')
 
 
-## 💐 Contribution
-Open pull request with improvements
-Discuss ideas in issues
+## 💐 Contributions
+
++ Open pull request with improvements
++ Discuss ideas in issues
 
