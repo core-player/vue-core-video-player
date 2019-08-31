@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <vue-core-video-player src="/videos/5-cm.mp4"></vue-core-video-player>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import VueCoreVideoPlayer from './vue-core-video-player.vue'
 
 export default {
   name: 'app',
