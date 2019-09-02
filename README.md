@@ -1,6 +1,9 @@
 # vue-core-video-player
 
-A ligy
+<img src="./UI/logo.png" width="128" />
+
+
+> A Lightwight Video Player For Vue.js.
 
 
 
