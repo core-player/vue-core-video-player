@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <vue-core-video-player src="/videos/5-cm.mp4"></vue-core-video-player>
+    <vue-core-video-player controls src="/videos/5-cm.mp4"></vue-core-video-player>
   </div>
 </template>
 
@@ -11,7 +10,7 @@ import VueCoreVideoPlayer from './vue-core-video-player.vue'
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    VueCoreVideoPlayer
   }
 }
 </script>
@@ -24,5 +23,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+#app .vue-core-video-player-containers {
+  margin: 60px auto;
 }
 </style>

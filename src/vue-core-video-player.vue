@@ -1,31 +1,38 @@
 <template>
   <div class="vue-core-video-player-containers">
-    
+    <video :src="src"></video>
+    <Dashboard />
+    <Layers />
   </div>
 </template>
 
 <script>
+import Dashboard from './dashboard/dashboard.vue'
+import Layers from './dashboard/dashboard.vue'
+
 export default {
   name: 'VueCoreVideoPlayer',
+  components: {
+    Dashboard,
+    Layers
+  },
   props: {
-    msg: String
+    src: String,
+    controls: Boolean
   }
 }
 </script>
 
 <style>
-h3 {
-  margin: 40px 0 0;
+.vue-core-video-player-containers {
+  position: relative;
+  width: 1088px;
+  height: 600px;
+  background-color: #000;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.vue-core-video-player-containers video{
+  background-color: #000;
+  width: 100%;
+  height: 100%;
 }
 </style>
