@@ -8,7 +8,7 @@
 
 <script>
 import Dashboard from './dashboard/dashboard.vue'
-import Layers from './dashboard/dashboard.vue'
+import Layers from './layers/layers.vue'
 
 export default {
   name: 'VueCoreVideoPlayer',

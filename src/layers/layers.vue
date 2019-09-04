@@ -8,7 +8,7 @@
 export default {
   name: 'Layers',
   props: {
-    visible: Boolean,
+    visible: Boolean
   }
 }
 </script>
