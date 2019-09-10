@@ -8,7 +8,7 @@
 export default {
   name: 'Dashboard',
   props: {
-    visible: Boolean,
+    visible: Boolean
   }
 }
 </script>
