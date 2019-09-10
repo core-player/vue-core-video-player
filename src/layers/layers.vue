@@ -1,12 +1,17 @@
 <template>
   <div class="vue-core-video-player-layers">
+    <play-pause-layer></play-pause-layer>
   </div>
 </template>
 
 <script>
+import PlayPauseLayer from './play-pause-layer.vue';
 
 export default {
   name: 'Layers',
+  components: {
+    PlayPauseLayer,
+  },
   props: {
     visible: Boolean
   }
