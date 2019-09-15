@@ -1,0 +1,77 @@
+.vue-core-video-player-layer{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.vcp-icon{
+  display: inline-block;
+}
+.vue-core-video-player-control {
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  font-size: 13px;
+  color: #fff;
+  .btn-control-panel{
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: 54px;
+    padding: 20px;
+    min-height: 30px;
+    box-sizing: border-box;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, .7);
+    border-radius: 4px;
+    font-weight: 500;
+    ul,li{
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    ul li {
+      list-style: none;
+      height: 30px;
+      line-height: 30px;
+      .item-name{
+        float: left;
+      }
+    }
+  }
+}
+.btn-control{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  .tips {
+    position: absolute;
+    min-width: 30px;
+    padding: 4px 10px;
+    border-radius: 2px;
+    bottom: 54px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: rgba(255, 255, 255, .7);
+    background-color: rgba(0,0,0, .7);
+    text-align: center;
+    line-height: 1.2;
+    word-break: keep-all;
+    word-wrap: no-wrap;
+    opacity: 0;
+    transition: opacity .15s ease-in;
+  }
+  &:hover{
+    .tips { 
+      opacity: 1;
+    }
+  }
+}

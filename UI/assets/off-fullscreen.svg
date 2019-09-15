@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="18" viewBox="0 0 25 18">
+  <g id="off-fullscreen" transform="translate(-1.978 -1.826)">
+    <g id="组件_6_9" data-name="组件 6 – 9" transform="translate(16.978 1.826)">
+      <g id="组件_4_1" data-name="组件 4 – 1">
+        <rect id="矩形_7" data-name="矩形 7" width="10" height="2" transform="translate(0 5)" fill="#fff"/>
+        <rect id="矩形_8" data-name="矩形 8" width="2" height="6" fill="#fff"/>
+      </g>
+      <g id="组件_5_1" data-name="组件 5 – 1" transform="translate(0 12)">
+        <rect id="矩形_9" data-name="矩形 9" width="10" height="2" fill="#fff"/>
+        <rect id="矩形_10" data-name="矩形 10" width="2" height="6" fill="#fff"/>
+      </g>
+    </g>
+    <g id="组件_6_10" data-name="组件 6 – 10" transform="translate(11.978 19.826) rotate(180)">
+      <g id="组件_4_1-2" data-name="组件 4 – 1">
+        <rect id="矩形_7-2" data-name="矩形 7" width="10" height="2" transform="translate(0 4)" fill="#fff"/>
+        <rect id="矩形_8-2" data-name="矩形 8" width="2" height="6" fill="#fff"/>
+      </g>
+      <g id="组件_5_1-2" data-name="组件 5 – 1" transform="translate(0 12)">
+        <rect id="矩形_9-2" data-name="矩形 9" width="10" height="2" fill="#fff"/>
+        <rect id="矩形_10-2" data-name="矩形 10" width="2" height="6" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

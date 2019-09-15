@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="23.542" height="23" viewBox="0 0 23.542 23">
+  <g id="volume" transform="translate(-1397 -690.5)">
+    <rect id="矩形_15" data-name="矩形 15" width="7" height="12" transform="translate(1397 696)" fill="#fff"/>
+    <path id="多边形_3" data-name="多边形 3" d="M11.5,0,23,12H0Z" transform="translate(1397.5 713.5) rotate(-90)" fill="#fff"/>
+    <g id="组件_12_1" data-name="组件 12 – 1" transform="matrix(1, 0.017, -0.017, 1, 1412.847, 695.303)">
+      <path id="路径_2" data-name="路径 2" d="M1413.639,696.679a2.89,2.89,0,0,1,3.092,3.073,2.763,2.763,0,0,1-3.092,2.886" transform="translate(-1413.639 -693.133)" fill="none" stroke="#fff" stroke-width="1.5"/>
+      <path id="路径_3" data-name="路径 3" d="M1413.639,696.68s6.913-.265,6.723,6.681-6.723,6.274-6.723,6.274" transform="translate(-1413.434 -696.679)" fill="none" stroke="#fff" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

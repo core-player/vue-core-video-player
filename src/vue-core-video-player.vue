@@ -1,8 +1,8 @@
 <template>
   <div class="vue-core-video-player-containers">
-    <video :src="src"></video>
-    <Dashboard />
+    <video autoplay :src="src"></video>
     <Layers />
+    <Dashboard />
   </div>
 </template>
 
