@@ -17,30 +17,42 @@
   margin-right: 20px;
   font-size: 13px;
   color: #fff;
-  .btn-control-panel{
-    display: none;
-    position: absolute;
-    left: 50%;
-    bottom: 54px;
-    padding: 20px;
-    min-height: 30px;
-    box-sizing: border-box;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, .7);
-    border-radius: 4px;
-    font-weight: 500;
-    ul,li{
-      margin: 0;
-      padding: 0;
-      text-align: center;
+}
+.btn-control-panel{
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 54px;
+  padding: 20px;
+  min-height: 30px;
+  box-sizing: border-box;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, .7);
+  border-radius: 4px;
+  font-weight: 500;
+  ul,li{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  ul li {
+    list-style: none;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    .item-name{
+      flex: 1;
+      align-self: flex-start;
     }
-    ul li {
-      list-style: none;
-      height: 30px;
+    .item-control{
+      display: flex;
+      flex: 1;
+      text-align: right;
       line-height: 30px;
-      .item-name{
-        float: left;
-      }
+      align-items: center;
+      justify-content: flex-end;
     }
   }
 }

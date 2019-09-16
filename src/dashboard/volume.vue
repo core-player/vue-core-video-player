@@ -9,12 +9,13 @@
       <span class="tips">静音</span>
     </div>
 
-    <div class="btn-control-panel" style="display:block;">
+    <div class="btn-control-panel">
       <div class="progress">
         <div class="volume-current">
           <div class="thumb-drag"></div>
         </div>
       </div>
+      <div class="volume-info">50%</div>
     </div>
   </div>
 </template>
@@ -44,7 +45,7 @@ export default {
 }
 .volume-control{
   .btn-control-panel{
-    display: block;
+    display: none;
     width: 40px;
     height: 150px;
     .progress{
@@ -56,6 +57,7 @@ export default {
       margin-left: -2px;
       margin-top: -50px;
       background-color: rgba(255, 255, 255, .7);
+      cursor: pointer;
       .volume-current{
         position: absolute;
         bottom: 0;
@@ -92,6 +94,17 @@ export default {
           opacity: 1;
         }
       }
+    }
+    .volume-info {
+      position: absolute;
+      top: -30px;
+      left: 0;
+      width: 40px;
+      height: 20px;
+      background-color: rgba(0,0,0, .7);
+      border-radius: 4px;
+      font-size: 12px;
+      line-height: 20px;
     }
   }
 }
