@@ -1,7 +1,6 @@
 # vue-core-video-player
 
-A ligy
-
+A Lightwight Video Player For Vue.js.
 
 
 ## Get Started
