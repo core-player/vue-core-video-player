@@ -7,6 +7,9 @@
 </template>
 
 <script>
+import './directives'
+import { i18n } from './helper'
+
 import Dashboard from './dashboard/dashboard.vue'
 import Layers from './layers/layers.vue'
 
@@ -18,8 +21,14 @@ export default {
   },
   props: {
     src: String,
+    lang: String,
     controls: Boolean
+  },
+  beforeCreate() {
+    // console.log(this.lang)
+    i18n.setLocale();
   }
+
 }
 </script>
 

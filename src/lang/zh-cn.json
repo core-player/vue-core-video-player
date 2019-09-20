@@ -1,0 +1,8 @@
+{
+  "dashboard" : {
+    "settings" : {
+      "autoplay": "自动播放",
+      "loop": "循环播放"
+    }
+  }
+}

@@ -6,13 +6,15 @@
     <div class="btn-control-panel" style="display:block;">
       <ul>
         <li>
-          <div class="item-name">Autoplay</div>
+          <span class="item-name">
+            {{$t('dashboard.settings.autoplay')}}
+          </span>
           <div class="item-control">
             <widgets-switch></widgets-switch>
           </div>
         </li>
         <li>
-          <span class="item-name">Loop</span>
+          <span class="item-name" >{{$t('dashboard.settings.loop')}}</span>
           <div class="item-control">
             <widgets-switch></widgets-switch>
           </div>

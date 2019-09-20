@@ -2,7 +2,7 @@
   "dashboard" : {
     "settings" : {
       "autoplay": "Autoplay",
-      "loop": "Loop"
+      "loop": "loop"
     }
   }
 }
