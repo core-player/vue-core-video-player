@@ -1,8 +1,18 @@
 {
   "dashboard" : {
+    "btn": {
+      "play": "Play",
+      "pause": "Pause",
+      "fullscreen": "Full screen",
+      "exitFullscreen": "Exit Fullscreen",
+      "mute": "Mute",
+      "unmute": "Unmute"
+    },
     "settings" : {
       "autoplay": "Autoplay",
-      "loop": "Loop"
+      "loop": "Loop",
+      "speed": "Speed",
+      "resolution": "Resolution"
     }
   }
 }

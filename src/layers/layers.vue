@@ -2,18 +2,24 @@
   <div class="vue-core-video-player-layers">
     <cover-layer></cover-layer>
     <play-pause-layer></play-pause-layer>
+    <logo-layer></logo-layer>
+    <title-layer></title-layer>
   </div>
 </template>
 
 <script>
-import PlayPauseLayer from './play-pause-layer.vue';
-import CoverLayer from './cover-layer';
+import TitleLayer from './title-layer'
+import LogoLayer from './logo-layer'
+import PlayPauseLayer from './play-pause-layer.vue'
+import CoverLayer from './cover-layer'
 
 export default {
   name: 'Layers',
   components: {
     PlayPauseLayer,
-    CoverLayer
+    CoverLayer,
+    LogoLayer,
+    TitleLayer
   },
   props: {
     visible: Boolean
