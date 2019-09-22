@@ -26,7 +26,7 @@ export default {
   },
   beforeCreate() {
     // console.log(this.lang)
-    i18n.setLocale();
+    i18n.setLocale()
   }
 
 }

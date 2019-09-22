@@ -14,5 +14,10 @@
       "speed": "Speed",
       "resolution": "Resolution"
     }
+  },
+  "layers": {
+    "error": {
+      "title": "(O_O)?  Error!"
+    }
   }
 }
