@@ -4,6 +4,7 @@
     <play-pause-layer></play-pause-layer>
     <logo-layer></logo-layer>
     <title-layer></title-layer>
+    <loading-layer></loading-layer>
     <error-layer></error-layer>
   </div>
 </template>
@@ -13,6 +14,7 @@ import TitleLayer from './title-layer'
 import LogoLayer from './logo-layer'
 import PlayPauseLayer from './play-pause-layer.vue'
 import CoverLayer from './cover-layer'
+import LoadingLayer from './loading-layer'
 import ErrorLayer from './error-layer'
 
 export default {
@@ -22,6 +24,7 @@ export default {
     CoverLayer,
     LogoLayer,
     TitleLayer,
+    LoadingLayer,
     ErrorLayer
   },
   props: {

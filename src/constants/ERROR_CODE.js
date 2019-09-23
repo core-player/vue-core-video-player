@@ -1,4 +1,8 @@
 const ERROR_CODE = {
+  NO_SOURCE: {
+    code: 'e404',
+    msg: 'Prop `src` not found'
+  },
   // Media Element
   2: 'Media Network Error',
   3: 'Video Cannot DECODE',

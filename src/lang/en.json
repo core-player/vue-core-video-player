@@ -18,6 +18,9 @@
   "layers": {
     "error": {
       "title": "(O_O)?  Error!"
+    },
+    "loading": {
+      "msg": "Loading ..."
     }
   }
 }

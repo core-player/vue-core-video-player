@@ -1,6 +1,6 @@
 <template>
   <div class="vue-core-video-player-containers">
-    <video autoplay :src="src"></video>
+    <video ref="vcp-video" autoplay :src="src"></video>
     <Layers />
     <Dashboard />
   </div>
@@ -9,9 +9,10 @@
 <script>
 import './directives'
 import { i18n } from './helper'
-
+import { initVideoCore } from './core'
 import Dashboard from './dashboard/dashboard.vue'
 import Layers from './layers/layers.vue'
+
 
 export default {
   name: 'VueCoreVideoPlayer',
@@ -27,6 +28,12 @@ export default {
   beforeCreate() {
     // console.log(this.lang)
     i18n.setLocale()
+  },
+  mounted() {
+    this.videoCore = initVideoCore({
+      ...this.$props,
+      videoEl: this.$refs['vcp-video']
+    })
   }
 
 }
