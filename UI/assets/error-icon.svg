@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="194" height="194" viewBox="0 0 194 194">
+  <g id="组_4" data-name="组 4" transform="translate(-850 -223)">
+    <circle id="椭圆_11" data-name="椭圆 11" cx="97" cy="97" r="97" transform="translate(850 223)" fill="#ff6060"/>
+    <g id="矩形_47" data-name="矩形 47" transform="translate(864 310)" fill="#fff" stroke="#ccc" stroke-width="1">
+      <rect width="17" height="13" stroke="none"/>
+      <rect x="0.5" y="0.5" width="16" height="12" fill="none"/>
+    </g>
+    <g id="组_5" data-name="组 5" transform="translate(0 -1)">
+      <g id="矩形_48" data-name="矩形 48" transform="translate(870 314)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="1" height="2" stroke="none"/>
+        <rect x="0.5" y="0.5" height="1" fill="none"/>
+      </g>
+      <g id="矩形_49" data-name="矩形 49" transform="translate(874 314)" fill="#fff" stroke="#707070" stroke-width="1">
+        <rect width="1" height="2" stroke="none"/>
+        <rect x="0.5" y="0.5" height="1" fill="none"/>
+      </g>
+    </g>
+    <g id="矩形_50" data-name="矩形 50" transform="translate(872 317)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="1" height="2" stroke="none"/>
+      <rect x="0.5" y="0.5" height="1" fill="none"/>
+    </g>
+    <g id="矩形_51" data-name="矩形 51" transform="translate(875 319)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="1" height="2" stroke="none"/>
+      <rect x="0.5" y="0.5" height="1" fill="none"/>
+    </g>
+    <path id="路径_10" data-name="路径 10" d="M879.5,328.5s8.228,10.764,0,17.566,11.856,7.948,11.856,7.948,1.681,6.365-5.264,15.856,20.577-1.755,20.577-1.755l19.186,9.7L939.97,357.3" fill="none" stroke="#000" stroke-width="2"/>
+    <g id="矩形_52" data-name="矩形 52" transform="translate(869 319)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="1" height="2" stroke="none"/>
+      <rect x="0.5" y="0.5" height="1" fill="none"/>
+    </g>
+    <g id="矩形_53" data-name="矩形 53" transform="translate(910 297)" fill="#fff" stroke="#000" stroke-width="2">
+      <rect width="112" height="70" stroke="none"/>
+      <rect x="1" y="1" width="110" height="68" fill="none"/>
+    </g>
+    <g id="组_6" data-name="组 6" transform="translate(-4 15)">
+      <rect id="矩形_54" data-name="矩形 54" width="67" height="3" transform="translate(936 357)"/>
+      <rect id="矩形_56" data-name="矩形 56" width="2" height="5" transform="translate(943 352)"/>
+      <rect id="矩形_57" data-name="矩形 57" width="2" height="5" transform="translate(994 352)"/>
+    </g>
+    <g id="组_8" data-name="组 8" transform="translate(-62.955 412.135) rotate(-25)">
+      <rect id="矩形_58" data-name="矩形 58" width="7" height="3" transform="translate(886 322)"/>
+      <rect id="矩形_59" data-name="矩形 59" width="1" height="2" transform="translate(887 320)" fill="#ccc"/>
+      <path id="路径_9" data-name="路径 9" d="M0,0H1V2H0Z" transform="translate(891 320)" fill="#ccc"/>
+    </g>
+    <text id="Error_" data-name="Error !" transform="translate(923 322)" fill="#ff6060" font-size="18" font-family="ArialMT, Arial"><tspan x="0" y="16">Error !</tspan></text>
+  </g>
+</svg>

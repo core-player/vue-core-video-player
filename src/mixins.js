@@ -48,7 +48,7 @@ const mixins = {
     },
     once (event, callback) {
       this.player.once(event, callback)
-    }
+    },
 
   }
 }
