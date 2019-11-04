@@ -1,6 +1,6 @@
 <template>
   <div class="vue-core-video-player-containers">
-    <video ref="vcp-video" autoplay :src="src"></video>
+    <video ref="vcp-video" :src="src"></video>
     <Layers />
     <Dashboard />
   </div>
@@ -8,14 +8,17 @@
 
 <script>
 import './directives'
+import EVENTS from './constants/EVENTS'
 import { i18n } from './helper'
 import { initVideoCore } from './core'
+import coreMixins from './mixins' 
 import Dashboard from './dashboard/dashboard.vue'
 import Layers from './layers/layers.vue'
 
 
 export default {
   name: 'VueCoreVideoPlayer',
+  mixins: [coreMixins],
   components: {
     Dashboard,
     Layers
@@ -30,10 +33,13 @@ export default {
     i18n.setLocale()
   },
   mounted() {
-    this.videoCore = initVideoCore({
+    this.$player = this.videoCore = initVideoCore({
       ...this.$props,
       videoEl: this.$refs['vcp-video']
     })
+    this._coreID = this.videoCore.id;
+    console.log(11111);
+    this.emit(EVENTS.LIFECYCYLE_INITING, this.$player);
   }
 
 }

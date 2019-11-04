@@ -1,5 +1,5 @@
 <template>
-  <div class="vue-core-video-player-layer logo-layer" style="display:block;">
+  <div class="vcp-layer logo-layer">
     <div class="logo-wrap">
       <img alt="logo" :src="src" />
     </div>

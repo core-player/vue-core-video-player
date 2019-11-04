@@ -359,7 +359,7 @@ class BaseVideoCore {
     }
   }
 
-  initResolution (videoUrl, medias) {
+  initResolution (videoUrl, medias = []) {
     const { resolution } = this.config
     // eslint-disable-next-line prefer-destructuring
     const length = medias.length
@@ -395,6 +395,10 @@ class BaseVideoCore {
         })
       }
     }
+  }
+  
+  _setFormatMedias() {
+    
   }
 
   destroy () {

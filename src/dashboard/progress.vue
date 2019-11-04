@@ -13,6 +13,9 @@ export default {
   name: 'Progress',
   props: {
     visible: Boolean
+  },
+  data () {
+    
   }
 }
 </script>
@@ -35,15 +38,15 @@ export default {
 }
 .vue-core-video-player-progress-loaded,
 .vue-core-video-player-progress-played{
-  position: absolute;
+  position: absolute
   top: 0;
   left: 0;
-  width: 50%;
+  width: 0;
   height: 100%;
-  background-color: rgba(255, 255, 255, .7);
+  background-color: rgba(200, 255, 255, .7);
 }
 .vue-core-video-player-progress-played{
-  width: 30%;
+  width: 0;
   background-color: #ff6060;
   .thumb-drag{
     opacity: 0;

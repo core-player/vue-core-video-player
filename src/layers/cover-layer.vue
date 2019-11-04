@@ -1,5 +1,5 @@
 <template>
-  <div class="vue-core-video-player-layer cover-layer">
+  <div class="vcp-layer cover-layer">
     <img alt="video cover" src="/cover01.jpg" />
   </div>
 </template>

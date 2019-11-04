@@ -1,5 +1,5 @@
 <template>
-  <div class="vue-core-video-player-layer title-layer" style="display:block;">
+  <div class="vcp-layer title-layer">
     <div class="video-title">{{title}}</div>
   </div>
 </template>
