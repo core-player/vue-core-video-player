@@ -58,7 +58,7 @@ export default {
     }
   }
   .btn-control-panel{
-    display: block;
+    display: none;
     left: -180px;
     width: 220px;
     height: 160px;

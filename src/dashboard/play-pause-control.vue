@@ -13,8 +13,8 @@
 
 <script>
 
-import coreMixins from '../mixins'  
-  
+import coreMixins from '../mixins'
+
 export default {
   name: 'PlayPauseControl',
   mixins: [coreMixins],

@@ -15,7 +15,9 @@ export default {
     visible: Boolean
   },
   data () {
-    
+    return {
+
+    }
   }
 }
 </script>
@@ -38,7 +40,7 @@ export default {
 }
 .vue-core-video-player-progress-loaded,
 .vue-core-video-player-progress-played{
-  position: absolute
+  position: absolute;
   top: 0;
   left: 0;
   width: 0;

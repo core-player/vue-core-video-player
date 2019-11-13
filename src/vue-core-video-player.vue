@@ -1,5 +1,5 @@
 <template>
-  <div class="vue-core-video-player-containers">
+  <div class="vcp-container" ref="vcp-el">
     <video ref="vcp-video" :src="src"></video>
     <Layers />
     <Dashboard />
@@ -35,10 +35,11 @@ export default {
   mounted() {
     this.$player = this.videoCore = initVideoCore({
       ...this.$props,
-      videoEl: this.$refs['vcp-video']
+      videoEl: this.$refs['vcp-video'],
+      el: this.$refs['vcp-el']
     })
     this._coreID = this.videoCore.id;
-    console.log(11111);
+    console.log(this.$player);
     this.emit(EVENTS.LIFECYCYLE_INITING, this.$player);
   }
 
@@ -46,13 +47,13 @@ export default {
 </script>
 
 <style>
-.vue-core-video-player-containers {
+.vcp-container {
   position: relative;
-  width: 1088px;
+  width: 1180px;
   height: 600px;
   background-color: #000;
 }
-.vue-core-video-player-containers video{
+.vcp-container  video{
   background-color: #000;
   width: 100%;
   height: 100%;

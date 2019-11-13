@@ -1,5 +1,5 @@
 <template>
-  <div class="vue-core-video-player-dashboard">
+  <div class="vcp-dashboard">
     <Progress />
     <Controls />
   </div>
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style>
-.vue-core-video-player-dashboard {
+.vcp-dashboard {
   z-index: 11;
   position: absolute;
   left: 0;
@@ -30,5 +30,11 @@ export default {
   width: 100%;
   height: 59px;
   background: rgba(0,0,0,.5);
+}
+.fullscreen .vcp-dashboard {
+  bottom: 60px;
+  width: 1182px;
+  left: 50%;
+  margin-left: -591px;
 }
 </style>

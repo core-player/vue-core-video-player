@@ -1,6 +1,7 @@
 import ee from 'event-emitter'
 import EVENTS from './constants/EVENTS'
 import * as types from './helper/type'
+import { addClass, removeClass } from './helper/dom'
 // import eventBus from './helper/eve'
 // import { getVideoCore } from './core'
 const _ee = ee()
@@ -9,6 +10,7 @@ const mixins = {
   data () {
     return {
       show: false,
+      fullscreen: false,
       _coreID: ''
     }
   },
@@ -16,6 +18,7 @@ const mixins = {
   created () {
     this.on(EVENTS.LIFECYCYLE_INITING, ($player) => {
       this.$player = $player
+      this.$el = this.$player.$el
     })
   },
 
@@ -23,12 +26,51 @@ const mixins = {
 
   methods: {
     play () {
-      console.log(this);
       this.$player.play()
     },
 
     pause () {
       this.$player.pause()
+    },
+
+    enterFullscreen () {
+      const el = this.$el
+      console.log(el);
+      if (el.mozRequestFullScreen) {
+        el.mozRequestFullScreen()
+      } else if (el.webkitRequestFullscreen) {
+        el.webkitRequestFullscreen()
+      } else if (el.requestFullScreen) {
+        el.requestFullscreen()
+      }
+      addClass(el, 'fullscreen')
+      this.emit('fullscreen', true)
+      this.fullscreen = true
+    },
+
+    cancelFullscreen (isManual) {
+      const el = this.$el
+      // if (isManual) {
+      //   this.emit('fullscreen', false)
+      //   removeClass(el, 'fullscreen')
+      //   this.fullscreen = false
+      //   return
+      // }
+      console.log(444)
+      if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen()
+      } else if (document.webkitCancelFullScreen) {
+        document.webkitCancelFullScreen()
+      } else if (document.cancelFullScreen) {
+        document.cancelFullScreen()
+      }
+      removeClass(el, 'fullscreen')
+      this.emit('fullscreen', false)
+      this.fullscreen = false
+    },
+
+    getFullscreen () {
+      return (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement)
     },
 
     on (event, callback) {

@@ -43,6 +43,7 @@ class BaseVideoCore {
     this.config = Object.assign(DEFAULT_CONFIG, config)
     this.parse(this.config)
     this.$video = this.config.videoEl
+    this.$el = this.config.el
   }
 
   parse () {
@@ -363,7 +364,7 @@ class BaseVideoCore {
     const { resolution } = this.config
     // eslint-disable-next-line prefer-destructuring
     const length = medias.length
-    this._setFormatMedias(medias)
+    // this._setFormatMedias(medias)
     const newMedias = [].concat(medias);
     newMedias.sort((a, b) => {
       if (a.resolution < b.resolution) {
@@ -395,10 +396,6 @@ class BaseVideoCore {
         })
       }
     }
-  }
-  
-  _setFormatMedias() {
-    
   }
 
   destroy () {
