@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import EVENTS from '../constants/EVENTS'
 import coreMixins from '../mixins'
 
 export default {

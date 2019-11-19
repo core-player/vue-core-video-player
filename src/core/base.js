@@ -44,6 +44,10 @@ class BaseVideoCore {
     this.parse(this.config)
     this.$video = this.config.videoEl
     this.$el = this.config.el
+    this._eventEmitter = config.eventEmitter
+    this.state = {}
+    this.parse()
+    this.init()
   }
 
   parse () {
@@ -74,7 +78,6 @@ class BaseVideoCore {
     this.checkSource(this.config.src)
     this._autoRegisterEvents()
     this._setVideoAttr()
-    this._setPlayer()
     this.emit(EVENTS.LIFECYCYLE_INITED)
   }
 
@@ -331,9 +334,9 @@ class BaseVideoCore {
     }
     this.$video.loop = false
     VIDEO_ATTRS.forEach((item) => {
-      if (this.options[item]) {
+      if (this.config[item]) {
         // this.$video.setAttribute(item, this.options[item]);
-        this.$video[item] = this.options[item]
+        this.$video[item] = this.config[item]
       }
     })
   }
@@ -405,6 +408,14 @@ class BaseVideoCore {
 
   getVideoElement () {
     return this.$video
+  }
+
+  on (key, callback) {
+    this._eventEmitter.on(key, callback)
+  }
+
+  emit (key, data) {
+    this._eventEmitter.emit(key, data)
   }
 
   static set debug (value) {

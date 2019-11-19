@@ -11,6 +11,7 @@ const mixins = {
     return {
       show: false,
       fullscreen: false,
+      isPlaying: false,
       _coreID: ''
     }
   },
@@ -19,6 +20,14 @@ const mixins = {
     this.on(EVENTS.LIFECYCYLE_INITING, ($player) => {
       this.$player = $player
       this.$el = this.$player.$el
+    })
+    this.on(EVENTS.PLAY, () => {
+      console.log('play!')
+      this.isPlaying = true
+    })
+    this.on(EVENTS.PAUSE, () => {
+      console.log('pause!')
+      this.isPlaying = false
     })
   },
 
@@ -35,7 +44,6 @@ const mixins = {
 
     enterFullscreen () {
       const el = this.$el
-      console.log(el);
       if (el.mozRequestFullScreen) {
         el.mozRequestFullScreen()
       } else if (el.webkitRequestFullscreen) {

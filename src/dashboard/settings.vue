@@ -34,12 +34,14 @@
 
 <script>
 import Switch from '../widgets/switch.vue'
+import coreMixins from '../mixins'
 
 export default {
   name: 'Settings',
   props: {
     visible: Boolean
   },
+  mixins: [coreMixins],
   components: {
     'widgets-switch': Switch
   }

@@ -36,10 +36,13 @@ export default {
     this.$player = this.videoCore = initVideoCore({
       ...this.$props,
       videoEl: this.$refs['vcp-video'],
-      el: this.$refs['vcp-el']
+      el: this.$refs['vcp-el'],
+      eventEmitter: {
+        on: this.on,
+        emit: this.emit
+      }
     })
     this._coreID = this.videoCore.id;
-    console.log(this.$player);
     this.emit(EVENTS.LIFECYCYLE_INITING, this.$player);
   }
 

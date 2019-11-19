@@ -1,29 +1,58 @@
 <template>
-  <div class="vue-core-video-player-progress">
-    <div class="vue-core-video-player-progress-loaded"></div>
-    <div class="vue-core-video-player-progress-played">
+  <div class="vcp-progress">
+    <div class="vcp-progress-loaded" :style="{width: bufferProgress + '%'}"></div>
+    <div class="vcp-progress-played" :style="{width: progress + '%'}">
       <div class="thumb-drag"></div>
     </div>
   </div>
 </template>
 
 <script>
+import coreMixins from '../mixins'
+import { EVENTS } from '../constants'
 
 export default {
   name: 'Progress',
   props: {
     visible: Boolean
   },
+  mixins: [coreMixins],
   data () {
     return {
-
+      progress: 0.00,
+      bufferProgress: 0.00
     }
+  },
+  created () {
+    this.on(EVENTS.TIMEUPDATE, () => {
+      const time = this.$player.getCurrentTime()
+      const duration = this.$player.getDuration()
+      // this.setProgressPlayedPercent();
+      this.progress = (time / duration * 100).toFixed(2)
+      // this.setRangeValue((time / duration * 100).toFixed(1));
+    })
+    this.on(EVENTS.PROGRESS, () => {
+      const bufferTime = this.$player.getBufferTime()
+      const duration = this.$player.getDuration()
+      if (bufferTime > 0 && duration > 0) {
+        this.bufferProgress = (bufferTime / duration * 100).toFixed(2)
+      }
+    });
+    const initTime = Date.now()
+    this.on(EVENTS.LOADSTART, () => {
+      const currentTime = Date.now() - initTime
+      const duration = this.$player.getDuration()
+      this.bufferProgress = (bufferTime / duration * 100).toFixed(2)
+    });
+  },
+  methods: {
+
   }
 }
 </script>
 
 <style lang="less">
-.vue-core-video-player-progress {
+.vcp-progress {
   position: absolute;
   bottom: 100%;
   left: 0;
@@ -38,16 +67,19 @@ export default {
     }
   }
 }
-.vue-core-video-player-progress-loaded,
-.vue-core-video-player-progress-played{
+.vcp-progress-loaded,
+.vcp-progress-played{
   position: absolute;
   top: 0;
   left: 0;
   width: 0;
   height: 100%;
-  background-color: rgba(200, 255, 255, .7);
+  background-color: rgba(255, 255, 255, .7);
 }
-.vue-core-video-player-progress-played{
+.vcp-progress-loaded {
+  transition: width .1s cubic-bezier(0.4,0.0,1,1);
+}
+.vcp-progress-played{
   width: 0;
   background-color: #ff6060;
   .thumb-drag{
