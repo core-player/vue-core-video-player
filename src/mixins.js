@@ -64,7 +64,6 @@ const mixins = {
       //   this.fullscreen = false
       //   return
       // }
-      console.log(444)
       if (document.mozCancelFullScreen) {
         document.mozCancelFullScreen()
       } else if (document.webkitCancelFullScreen) {

@@ -1,15 +1,18 @@
 <template>
-  <div class="vcp-progress">
-    <div class="vcp-progress-loaded" :style="{width: bufferProgress + '%'}"></div>
-    <div class="vcp-progress-played" :style="{width: progress + '%'}">
-      <div class="thumb-drag"></div>
+  <div class="vcp-progress-hover" @click="seek">
+    <div class="vcp-progress">
+      <div class="vcp-progress-loaded" :style="{width: bufferProgress + '%'}"></div>
+      <div class="vcp-progress-played" :style="{width: progress + '%'}">
+        <div class="thumb-drag"></div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import coreMixins from '../mixins'
 import { EVENTS } from '../constants'
+import coreMixins from '../mixins'
+import { getElementOffsets } from '../helper/util'
 
 export default {
   name: 'Progress',
@@ -46,27 +49,51 @@ export default {
     });
   },
   methods: {
-
+    seek(e) {
+      const offsets = getElementOffsets(e.currentTarget);
+      if (this.getFullscreen()) {
+        offsets.left = 0;
+      }
+      const _clientRect = e.currentTarget.getBoundingClientRect();
+      const left = e.pageX - _clientRect.left;
+      const maxVal = e.currentTarget.offsetWidth;
+      const val = (left / maxVal * 100).toFixed(2);
+      this.progress = val;
+      const duration = this.$player.getDuration();
+      this.$player.seek(left / maxVal *  duration);
+    }
   }
 }
 </script>
 
 <style lang="less">
-.vcp-progress {
+.vcp-progress-hover {
   position: absolute;
   bottom: 100%;
   left: 0;
-  height: 4px;
+  height: 12px;
   width: 100%;
-  background-color: rgba(255, 255, 255, .3);
-  transition: height .2s ease .05s;
-  &:hover{
-    height: 6px;
-    .thumb-drag{
-      opacity: 1;
+  .vcp-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .3);
+    transition: height .2s ease .05s;
+  }
+
+  &:hover {
+    .vcp-progress {
+      height: 6px;
+      .thumb-drag{
+        opacity: 1;
+      }
     }
   }
+
 }
+
 .vcp-progress-loaded,
 .vcp-progress-played{
   position: absolute;
