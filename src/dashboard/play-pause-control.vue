@@ -12,7 +12,6 @@
 </template>
 
 <script>
-
 import coreMixins from '../mixins'
 
 export default {

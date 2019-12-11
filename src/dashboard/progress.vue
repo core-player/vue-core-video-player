@@ -44,6 +44,7 @@ export default {
     const initTime = Date.now()
     this.on(EVENTS.LOADSTART, () => {
       const currentTime = Date.now() - initTime
+      const bufferTime = this.$player.getBufferTime()
       const duration = this.$player.getDuration()
       this.bufferProgress = (bufferTime / duration * 100).toFixed(2)
     });
