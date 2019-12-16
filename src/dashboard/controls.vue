@@ -6,6 +6,7 @@
     </div>
     <div class="setting-control">
       <volume-control />
+      <picture-in-picture />
       <fullscreen-control />
       <settings-control />
     </div>
@@ -18,6 +19,7 @@ import TimeSpan from './time-span'
 import VolumeControl from './volume'
 import Fullscreen from './fullscreen'
 import Settings from './settings'
+import PictureInPicture from './picture-in-picture'
 
 
 export default {
@@ -27,7 +29,8 @@ export default {
     'time-span': TimeSpan,
     'volume-control': VolumeControl,
     'fullscreen-control': Fullscreen,
-    'settings-control': Settings
+    'settings-control': Settings,
+    'picture-in-picture': PictureInPicture
   },
   props: {
     visible: Boolean

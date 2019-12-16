@@ -1,4 +1,4 @@
-import zhCNLocale from '../lang/zh-CN.json'
+import zhCNLocale from '../lang/zh-cn.json'
 import enLocale from '../lang/en.json'
 import jaLocale from '../lang/ja.json'
 

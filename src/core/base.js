@@ -279,6 +279,19 @@ class BaseVideoCore {
     this.$video.currentTime = time
   }
 
+  requestPictureInPicture () {
+    const video = this.$video
+    try {
+      if (video !== document.pictureInPictureElement) {
+        video.requestPictureInPicture()
+      } else {
+        document.exitPictureInPicture()
+      }
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
   onended () {
     const { loop } = this.config
     if (!loop) {
