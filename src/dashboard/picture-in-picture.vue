@@ -13,6 +13,9 @@ import coreMixins from '../mixins'
 
 
 const _isSupportPIP = () => {
+  if ('pictureInPictureEnabled' in document) { 
+    return ture
+  }
   const el = document.createElement('video')
   if (el.requestPictureInPicture && typeof el.requestPictureInPicture === 'function') {
     return true;
