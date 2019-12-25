@@ -19,7 +19,7 @@ const mixins = {
   created () {
     this.on(EVENTS.LIFECYCYLE_INITING, ($player) => {
       this.$player = $player
-      this.$el = this.$player.$el
+      this.$container = this.$player.$el
     })
     this.on(EVENTS.PLAY, () => {
       console.log('play!')
@@ -43,7 +43,7 @@ const mixins = {
     },
 
     enterFullscreen () {
-      const el = this.$el
+      const el = this.$container
       if (el.mozRequestFullScreen) {
         el.mozRequestFullScreen()
       } else if (el.webkitRequestFullscreen) {
@@ -57,7 +57,7 @@ const mixins = {
     },
 
     cancelFullscreen (isManual) {
-      const el = this.$el
+      const el = this.$container
       // if (isManual) {
       //   this.emit('fullscreen', false)
       //   removeClass(el, 'fullscreen')

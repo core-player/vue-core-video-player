@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <vue-core-video-player controls src="/videos/the_garden_of_words_trailer_english__1080p.mp4"></vue-core-video-player>
+    <vue-core-video-player controls src="https://media.vued.vanthink.cn/the_garden_of_words_trailer_english__1080p.mp4"></vue-core-video-player>
   </div>
 </template>
 

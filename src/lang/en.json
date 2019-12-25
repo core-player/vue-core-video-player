@@ -6,7 +6,8 @@
       "fullscreen": "Full screen",
       "exitFullscreen": "Exit Fullscreen",
       "mute": "Mute",
-      "unmute": "Unmute"
+      "unmute": "Unmute",
+      "pip": "Picture-in-Picture"
     },
     "settings" : {
       "autoplay": "Autoplay",

@@ -37,4 +37,9 @@ export default {
   left: 50%;
   margin-left: -591px;
 }
+.small  .vcp-dashboard{
+  .vcp-dashboard {
+    height: 49px;
+  }
+}
 </style>

@@ -52,13 +52,15 @@ export default {
 <style>
 .vcp-container {
   position: relative;
-  width: 1180px;
-  height: 600px;
+  width: 720px;
+  height: 400px;
+  margin: 0 auto;
   background-color: #000;
 }
 .vcp-container  video{
   background-color: #000;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 </style>

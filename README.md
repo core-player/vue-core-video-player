@@ -11,8 +11,17 @@ A Lightwight Video Player For Vue.js.
 
 ## Get Started
 
-```
+### Npm
+
+``` bash
 $ npm install vue-core-video-player --save
+```
+
+### Yarn
+
+
+``` bash
+$ yarn add vue-core-video-player --save
 ```
 
 ``` vue
@@ -33,6 +42,13 @@ export default {
 </script>
 ```
 
+## Features
+
++ Custom configuration
++ i18n
++ SSR
++ Picture-in-Picture Mode
++ Events Subscription
 
 
 ## UI
