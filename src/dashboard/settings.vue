@@ -45,15 +45,15 @@ export default {
   components: {
     'widgets-switch': Switch
   },
-  data() {
+  data () {
     return {
       panelShow: false
     }
   },
 
   methods: {
-    toggle() {
-      this.panelShow = !this.panelShow;
+    toggle () {
+      this.panelShow = !this.panelShow
     }
   }
 }
