@@ -39,7 +39,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="5.963" height="11.568" viewBox="0 0 5.963 11.568"><path data-name="5" d="M5.154.616l-3.9 5 3.9 5.368" fill="none" stroke="#fff" stroke-width="2"/></svg>
           {{$t('dashboard.btn.back')}}
         </li>
-        <li v-for="(item, index) in resolutionList" @click="setResolution(item)">{{ item.resolution }}</li>
+        <li v-for="(item, index) in resolutionList" :key="index" @click="setResolution(item)">{{ item.resolution }}</li>
       </ul>
       <ul class="speed-list animated fadeInRight" v-if="speedListPanel">
         <li @click="backCurrentPanel">

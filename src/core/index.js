@@ -22,9 +22,9 @@ export function initVideoCore (config) {
     Core = BaseVideoCore
   }
   const core = new Core(config)
-  core.id = id;
+  core.id = id
   VPC_CORE_INS[id] = core
-  return core;
+  return core
 }
 
 export function getVideoCore (id) {

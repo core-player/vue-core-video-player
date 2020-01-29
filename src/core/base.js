@@ -11,7 +11,7 @@ import {
   getMatchRangeTime
 } from '../helper/util'
 import { throwError } from '../helper/error'
-import { removeAllChildrenNodes, addClass, removeClass } from '../helper/dom'
+import { removeAllChildrenNodes, addClass } from '../helper/dom'
 
 const VIDEO_EVENTS = [
   'play',
@@ -392,7 +392,7 @@ class BaseVideoCore {
     // eslint-disable-next-line prefer-destructuring
     const length = medias.length
     // this._setFormatMedias(medias)
-    const newMedias = [].concat(medias);
+    const newMedias = [].concat(medias)
     newMedias.sort((a, b) => {
       if (a.resolution < b.resolution) {
         return 1

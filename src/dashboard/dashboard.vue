@@ -22,7 +22,6 @@ export default {
   mixins: [coreMixins],
   mounted () {
     console.log(this.$refs['dashboard'].offsetWidth)
-
   }
 }
 </script>

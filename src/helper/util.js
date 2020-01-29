@@ -25,7 +25,7 @@ export function isMobileInLandscapeOrientation () {
   if (!window.orientation) {
     return false
   }
-  let quadrant = Math.round(window.orientation / 90);
+  let quadrant = Math.round(window.orientation / 90)
   while (quadrant < 0) {
     quadrant += 4
   }
@@ -103,7 +103,6 @@ export function guid () {
   }
   return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4()
 }
-
 
 export function fallbackCopyTextToClipboard (text, callback) {
   const textArea = document.createElement('textarea')
@@ -183,7 +182,7 @@ function getMediaSource () {
 const WEB_SUPPORT_H264_CODEC = 'video/mp4; codecs="avc1.42E01E,mp4a.40.2"'
 
 export const isMSESupported = () => {
-  const mediaSource = getMediaSource();
+  const mediaSource = getMediaSource()
   const sourceBuffer = window.SourceBuffer || window.WebKitSourceBuffer
   const isTypeSupported = mediaSource &&
     typeof mediaSource.isTypeSupported === 'function' &&

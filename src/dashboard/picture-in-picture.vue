@@ -8,20 +8,18 @@
 </template>
 
 <script>
-import EVENTS from '../constants/EVENTS'
+// import EVENTS from '../constants/EVENTS'
 import coreMixins from '../mixins'
 
-
 const _isSupportPIP = () => {
-  if ('pictureInPictureEnabled' in document) { 
-    return ture
+  if ('pictureInPictureEnabled' in document) {
+    return true
   }
   const el = document.createElement('video')
   if (el.requestPictureInPicture && typeof el.requestPictureInPicture === 'function') {
-    return true;
+    return true
   }
   return false
-
 }
 
 export default {
@@ -35,14 +33,14 @@ export default {
       show: false
     }
   },
-  created() {
+  created () {
     if (_isSupportPIP) {
-      this.show = true;
+      this.show = true
     }
   },
   methods: {
-    requestPictureInPicture() {
-      this.$player.requestPictureInPicture();
+    requestPictureInPicture () {
+      this.$player.requestPictureInPicture()
     }
   }
 }

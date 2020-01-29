@@ -86,7 +86,7 @@ export default {
   &:hover {
    .btn-control-panel {
      display: block;
-   } 
+   }
   }
   .btn-control-panel{
     display: none;

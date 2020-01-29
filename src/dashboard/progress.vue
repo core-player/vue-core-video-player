@@ -40,28 +40,28 @@ export default {
       if (bufferTime > 0 && duration > 0) {
         this.bufferProgress = (bufferTime / duration * 100).toFixed(2)
       }
-    });
-    const initTime = Date.now()
+    })
+    // const initTime = Date.now()
     this.on(EVENTS.LOADSTART, () => {
-      const currentTime = Date.now() - initTime
+      // const currentTime = Date.now() - initTime
       const bufferTime = this.$player.getBufferTime()
       const duration = this.$player.getDuration()
       this.bufferProgress = (bufferTime / duration * 100).toFixed(2)
-    });
+    })
   },
   methods: {
     seek (e) {
-      const offsets = getElementOffsets(e.currentTarget);
+      const offsets = getElementOffsets(e.currentTarget)
       if (this.getFullscreen()) {
-        offsets.left = 0;
+        offsets.left = 0
       }
-      const _clientRect = e.currentTarget.getBoundingClientRect();
-      const left = e.pageX - _clientRect.left;
-      const maxVal = e.currentTarget.offsetWidth;
-      const val = (left / maxVal * 100).toFixed(2);
-      this.progress = val;
-      const duration = this.$player.getDuration();
-      this.$player.seek(left / maxVal *  duration);
+      const _clientRect = e.currentTarget.getBoundingClientRect()
+      const left = e.pageX - _clientRect.left
+      const maxVal = e.currentTarget.offsetWidth
+      const val = (left / maxVal * 100).toFixed(2)
+      this.progress = val
+      const duration = this.$player.getDuration()
+      this.$player.seek(left / maxVal * duration)
     }
   }
 }

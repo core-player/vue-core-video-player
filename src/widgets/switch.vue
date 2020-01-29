@@ -10,7 +10,7 @@ export default {
     change: Function
   },
 
-  data() {
+  data () {
     return {
       isOpen: false
     }

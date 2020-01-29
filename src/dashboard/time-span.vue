@@ -9,7 +9,7 @@
 <script>
 import { EVENTS } from '../constants'
 import coreMixins from '../mixins'
-import { secondsToTime } from '../helper/util';
+import { secondsToTime } from '../helper/util'
 
 export default {
   name: 'TimeSpan',
@@ -27,7 +27,7 @@ export default {
     this.on(EVENTS.TIMEUPDATE, () => {
       const currentTime = this.$player.getCurrentTime()
       if (!currentTime) {
-        return;
+        return
       }
       this.currentTime = secondsToTime(currentTime)
       const newDuration = this.$player.getDuration()

@@ -25,7 +25,7 @@ export function swichChildClass (el, childSelector, className, tellFunc) {
 };
 
 export function hasClass (el, className) {
-  return el.className.indexOf(className) > -1;
+  return el.className.indexOf(className) > -1
 };
 
 export function addClass (dom, className) {

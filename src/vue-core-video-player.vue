@@ -11,10 +11,9 @@ import './directives'
 import EVENTS from './constants/EVENTS'
 import { i18n } from './helper'
 import { initVideoCore } from './core'
-import coreMixins from './mixins' 
+import coreMixins from './mixins'
 import Dashboard from './dashboard/dashboard.vue'
 import Layers from './layers/layers.vue'
-
 
 export default {
   name: 'VueCoreVideoPlayer',
