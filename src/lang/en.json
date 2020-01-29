@@ -3,10 +3,11 @@
     "btn": {
       "play": "Play",
       "pause": "Pause",
-      "fullscreen": "Full screen",
-      "exitFullscreen": "Exit Fullscreen",
+      "fullscreen": "Full Screen",
+      "exitFullscreen": "Exit Full Screen",
       "mute": "Mute",
       "unmute": "Unmute",
+      "back": "Back",
       "pip": "Picture-in-Picture"
     },
     "settings" : {

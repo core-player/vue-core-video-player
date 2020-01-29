@@ -28,11 +28,11 @@ export default {
     lang: String,
     controls: Boolean
   },
-  beforeCreate() {
+  beforeCreate () {
     // console.log(this.lang)
     i18n.setLocale()
   },
-  mounted() {
+  mounted () {
     this.$player = this.videoCore = initVideoCore({
       ...this.$props,
       videoEl: this.$refs['vcp-video'],
@@ -42,8 +42,8 @@ export default {
         emit: this.emit
       }
     })
-    this._coreID = this.videoCore.id;
-    this.emit(EVENTS.LIFECYCYLE_INITING, this.$player);
+    this._coreID = this.videoCore.id
+    this.emit(EVENTS.LIFECYCYLE_INITING, this.$player)
   }
 
 }

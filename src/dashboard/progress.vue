@@ -50,7 +50,7 @@ export default {
     });
   },
   methods: {
-    seek(e) {
+    seek (e) {
       const offsets = getElementOffsets(e.currentTarget);
       if (this.getFullscreen()) {
         offsets.left = 0;
