@@ -2,9 +2,13 @@
 
 # vue-core-video-player
 
+[![CircleCI](https://circleci.com/gh/core-player/vue-core-video-player.svg?style=shield)](https://circleci.com/gh/core-player/vue-core-video-player)
+
+
 <img width="180" src="./UI/assets/logo.png">
 
 A Lightwight Video Player For Vue.js.
+
 
 
 
