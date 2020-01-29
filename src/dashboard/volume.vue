@@ -161,4 +161,7 @@ export default {
     }
   }
 }
+.settings-open .volume-control:hover .btn-control-panel {
+  display: none;
+}
 </style>

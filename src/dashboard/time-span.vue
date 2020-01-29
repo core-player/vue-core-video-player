@@ -20,7 +20,7 @@ export default {
   data () {
     return {
       currentTime: '00:00:00',
-      duration: ''
+      duration: '--:--:--'
     }
   },
   created () {

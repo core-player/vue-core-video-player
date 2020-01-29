@@ -1,3 +1,5 @@
+@import "./animate.less";
+
 .vcp-layer{
   display: none;
   position: absolute;
@@ -73,12 +75,13 @@
     display: none;
     position: absolute;
     min-width: 30px;
-    padding: 4px 10px;
+    padding: 4px;
     border-radius: 2px;
     bottom: 54px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 12px;
+    font-weight: bold;
     color: rgba(255, 255, 255, .7);
     background-color: rgba(0,0,0, .7);
     text-align: center;
@@ -89,10 +92,18 @@
     opacity: 0;
     transition: opacity .15s ease-in;
   }
+  svg {
+    opacity: .85;
+    transition: opacity .1s ease;
+  }
   &:hover{
+    svg {
+      opacity: 1;
+    }
     .tips { 
       display: block;
       opacity: 1;
     }
   }
+  
 }

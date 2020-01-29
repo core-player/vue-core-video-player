@@ -11,7 +11,7 @@ import {
   getMatchRangeTime
 } from '../helper/util'
 import { throwError } from '../helper/error'
-import { removeAllChildrenNodes } from '../helper/dom'
+import { removeAllChildrenNodes, addClass, removeClass } from '../helper/dom'
 
 const VIDEO_EVENTS = [
   'play',
@@ -78,7 +78,18 @@ class BaseVideoCore {
     this.checkSource(this.config.src)
     this._autoRegisterEvents()
     this._setVideoAttr()
+    this.setSize()
     this.emit(EVENTS.LIFECYCYLE_INITED)
+  }
+
+  setSize () {
+    console.log(this.$el.offsetWidth)
+    const width = this.$el.offsetWidth
+    let size = ''
+    if (width <= 720) {
+      size = 'small'
+    }
+    addClass(this.$el, size)
   }
 
   _autoplay () {

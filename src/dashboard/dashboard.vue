@@ -1,5 +1,5 @@
 <template>
-  <div class="vcp-dashboard">
+  <div class="vcp-dashboard" ref="dashboard">
     <Progress />
     <Controls />
   </div>
@@ -8,6 +8,7 @@
 <script>
 import Progress from './progress'
 import Controls from './controls'
+import coreMixins from '../mixins'
 
 export default {
   name: 'Dashboard',
@@ -17,6 +18,11 @@ export default {
   },
   props: {
     visible: Boolean
+  },
+  mixins: [coreMixins],
+  mounted () {
+    console.log(this.$refs['dashboard'].offsetWidth)
+
   }
 }
 </script>
@@ -38,8 +44,9 @@ export default {
   margin-left: -591px;
 }
 .small  .vcp-dashboard{
-  .vcp-dashboard {
-    height: 49px;
-  }
+  height: 49px;
+}
+.small  .vcp-dashboard .vcp-controls {
+  height: 40px;
 }
 </style>

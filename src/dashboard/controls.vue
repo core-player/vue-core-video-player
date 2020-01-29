@@ -1,5 +1,5 @@
 <template>
-  <div class="vue-core-video-player-controls">
+  <div class="vcp-controls">
     <div class="playback-control">
       <play-pause-cntrol />
       <time-span />
@@ -7,8 +7,8 @@
     <div class="setting-control">
       <volume-control />
       <picture-in-picture />
-      <fullscreen-control />
       <settings-control />
+      <fullscreen-control />
     </div>
   </div>
 </template>
@@ -20,7 +20,6 @@ import VolumeControl from './volume'
 import Fullscreen from './fullscreen'
 import Settings from './settings'
 import PictureInPicture from './picture-in-picture'
-
 
 export default {
   name: 'Controls',
@@ -39,7 +38,7 @@ export default {
 </script>
 
 <style land="less">
-.vue-core-video-player-controls {
+.vcp-controls {
   z-index: 10;
   position: absolute;
   left: 0;

@@ -93,6 +93,14 @@ const mixins = {
     },
     emit (event, res) {
       _ee.emit(event, res)
+    },
+
+    addClass (cls) {
+      this.$container.classList.remove(cls)
+    },
+
+    removeClass (cls) {
+      this.$container.classList.remove(cls)
     }
 
   }
