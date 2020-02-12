@@ -387,6 +387,10 @@ class BaseVideoCore {
     }
   }
 
+  setSpeed (value) {
+    this.$video.playbackRate = value
+  }
+
   initResolution (videoUrl, medias = []) {
     const { resolution } = this.config
     // eslint-disable-next-line prefer-destructuring
@@ -444,9 +448,9 @@ class BaseVideoCore {
 
   static set debug (value) {
     if (value) {
-      localStorage.__vrplayer_debug = true
+      localStorage._vueCorePlayerDebug = true
     } else {
-      localStorage.__vrplayer_debug = ''
+      localStorage._vueCorePlayerDebug = ''
     }
   }
 }

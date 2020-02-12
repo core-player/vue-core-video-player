@@ -122,10 +122,12 @@ export default {
     setResolution (val) {
       const resolution = this.resolution
       this.$player.setResolution(resolution)
+      this.backCurrentPanel()
     },
     setSpeed (e) {
       const val = +e.target.dataset['val']
       this.$player.setSpeed(val)
+      this.backCurrentPanel()
     }
   },
 
@@ -133,6 +135,7 @@ export default {
     document.addEventListener('click', () => {
       if (this.panelShow) {
         this.panelShow = false
+        this.$container.classList.remove('settings-open')
       }
     })
   }
@@ -162,6 +165,9 @@ export default {
     .resolution-list,
     .speed-list {
       width: 80px;
+      li {
+        cursor: pointer;
+      }
       li:first-child {
         margin-left: -20px;
         cursor: pointer;
