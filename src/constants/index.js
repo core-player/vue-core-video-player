@@ -8,9 +8,15 @@ const CORE = {
   MP4: 'MP4'
 }
 
+const VIDEO_FORMAT = [
+  'video/webm',
+  'video/mp4'
+]
+
 export {
   DEFAULT_CONFIG,
   EVENTS,
   ERROR_CODE,
-  CORE
+  CORE,
+  VIDEO_FORMAT
 }

@@ -7,7 +7,8 @@ const DEFAULT_CONFIG = {
   playList: [],
   safeBufferTime: 2,
   minPlayBufferTime: 1,
-  resolution: '720p'
+  resolution: '720p',
+  dashboardHideDelay: 2500
 }
 
 export default DEFAULT_CONFIG

@@ -2,7 +2,7 @@
   <div class="vcp-container" ref="vcp-el">
     <video ref="vcp-video" :src="source"></video>
     <Layers />
-    <Dashboard />
+    <Dashboard :controls="controls" />
   </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
   props: {
     src: [String, Array],
     lang: String,
-    controls: Boolean
+    controls: [Boolean, String]
   },
   beforeCreate () {
     i18n.setLocale()

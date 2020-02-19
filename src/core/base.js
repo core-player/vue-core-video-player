@@ -2,6 +2,7 @@ import {
   EVENTS,
   DEFAULT_CONFIG,
   CORE,
+  VIDEO_FORMAT,
   ERROR_CODE
 } from '../constants'
 import {
@@ -12,7 +13,7 @@ import {
 } from '../helper/util'
 import { throwError } from '../helper/error'
 import { removeAllChildrenNodes, addClass } from '../helper/dom'
-import { parseMediaList } from '../helper/media'
+import { parseMediaList, checkVideoPlayType } from '../helper/media'
 
 const VIDEO_EVENTS = [
   'play',
@@ -53,6 +54,7 @@ class BaseVideoCore {
   parse () {
     const { src } = this.config
     this.initResolution(src)
+    this.initVideoType()
   }
 
   checkSource (url) {
@@ -97,13 +99,6 @@ class BaseVideoCore {
         const promise = this.player.play()
         this.autoPlayPolicy(promise)
       }
-      // hls should wait meta data loaded then trigger autoplay
-      if (this.options.core === CORE.HLS) {
-        this.emit(EVENTS.SERVICE_LOADING, true)
-        return this.on(EVENTS.LOADEDMETADATA, () => {
-          _autoplayfn()
-        })
-      }
       _autoplayfn()
     }
   }
@@ -124,6 +119,24 @@ class BaseVideoCore {
     setTimeout(() => {
       this.emit(EVENTS.SOURCE_UPDATED)
     }, 200)
+  }
+
+  initVideoType () {
+    const findType = (type) => {
+      for (let j = 0; j < this.medias.length; j++) {
+        if (this.medias[j].type === type) {
+          return this.medias[j]
+        }
+      }
+    }
+    for (let i = 0; i < VIDEO_FORMAT.length; i++) {
+      const item = findType(VIDEO_FORMAT[i])
+      if (checkVideoPlayType(VIDEO_FORMAT[i], this.$video) && item) {
+        this.config.src = item.src
+        this.$video.src = this.config.src
+        return
+      }
+    }
   }
 
   setResolution (resolution) {

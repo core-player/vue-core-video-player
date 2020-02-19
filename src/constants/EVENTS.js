@@ -16,19 +16,24 @@ const SOURCE = {
   SOURCE_UPDATED: 'SOURCE_UPDATED'
 }
 
-const EVENTS = {
-  ...ERROR,
-  ...LIFE_CYCLE,
-  ...SOURCE,
-  SERVICE_LOADING: 'service_loading',
-  SERVICE_ENDED: 'service_ended',
-  LOADING_START: 'loading_start',
-  LOADING_END: 'loading_end',
+const UI = {
   // UI
   UI_DASHBOARD_SHOW: 'ui_dashboard_show',
   UI_DASHBOARD_HIDE: 'ui_dashboard_hide',
   UI_PLAY: 'ui_play',
-  UI_PAUSE: 'ui_pause',
+  UI_PAUSE: 'ui_pause'
+}
+
+const EVENTS = {
+  ...ERROR,
+  ...LIFE_CYCLE,
+  ...SOURCE,
+  ...UI,
+  SERVICE_LOADING: 'service_loading',
+  SERVICE_ENDED: 'service_ended',
+  LOADING_START: 'loading_start',
+  LOADING_END: 'loading_end',
+  
   // PLUGIN AND CORE
   CORE_TO_MP4: 'core_to_mp4',
   // media events

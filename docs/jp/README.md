@@ -110,16 +110,3 @@ And it keep the same attributes of [HTML Video](https://developer.mozilla.org/en
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -208,6 +208,9 @@ export function setDebug (value) {
     localStorage.__vrplayer_debug = ''
   }
 }
+export const isNodeEnv = () => {
+  return typeof localStorage !== 'object' && typeof navigator !== 'object'
+}
 
 export const isMobile = isMobileJS.any
 export const isAndroid = isMobileJS.android
