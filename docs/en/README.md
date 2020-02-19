@@ -52,13 +52,13 @@ And you must set two keys (`resolution`, `src`) of your array item.
 const videoSource = [
   {
     src: 'https://media.vued.vanthink.cn/sparkle_your_name_am360p.mp4',
-    resolution: 360,
+    resolution: '360p',
   }, {
     src: 'https://media.vued.vanthink.cn/sparkle_your_name_am720p.mp4',
-    resolution: 720,
+    resolution: '720p',
   }, {
     src: 'https://media.vued.vanthink.cn/y2mate.com%20-%20sparkle_your_name_amv_K_7To_y9IAM_1080p.mp4',
-    resolution: 1080
+    resolution: '1080p'
   }
 ]
 ```
@@ -67,7 +67,7 @@ If you want to play different file type in different browser. You can add `type`
 ``` bash
 const videoSource = [
   {
-    src: 'https://media.vued.vanthink.cn/sparkle_your_name_am360p.mp4',
+    src: 'https://media.vued.vanthink.cn/sparkle_your_name_am720p.webm',
     type: 'video/webm',
   }, {
     src: 'https://media.vued.vanthink.cn/sparkle_your_name_am720p.mp4',

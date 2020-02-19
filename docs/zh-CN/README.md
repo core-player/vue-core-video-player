@@ -65,7 +65,7 @@ const videoSource = [
 ``` bash
 const videoSource = [
   {
-    src: 'https://media.vued.vanthink.cn/sparkle_your_name_am360p.mp4',
+    src: 'https://media.vued.vanthink.cn/sparkle_your_name_am720p.webm',
     type: 'video/webm',
   }, {
     src: 'https://media.vued.vanthink.cn/sparkle_your_name_am720p.mp4',

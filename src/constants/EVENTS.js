@@ -33,7 +33,7 @@ const EVENTS = {
   SERVICE_ENDED: 'service_ended',
   LOADING_START: 'loading_start',
   LOADING_END: 'loading_end',
-  
+
   // PLUGIN AND CORE
   CORE_TO_MP4: 'core_to_mp4',
   // media events

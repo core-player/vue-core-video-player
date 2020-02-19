@@ -26,7 +26,10 @@ export default {
   props: {
     src: [String, Array],
     lang: String,
-    controls: [Boolean, String]
+    controls: {
+      type: [String, Boolean],
+      default: true
+    }
   },
   beforeCreate () {
     i18n.setLocale()
@@ -49,6 +52,7 @@ export default {
     }
   },
   mounted () {
+    console.log(this.controls)
     this.$player = this.videoCore = initVideoCore({
       ...this.$props,
       videoEl: this.$refs['vcp-video'],
