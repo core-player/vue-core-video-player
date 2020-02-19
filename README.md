@@ -57,7 +57,7 @@ export default {
 
 ## UI
 
-<img src="./UI/ui.png">
+<img width="720px" src="./UI/ui.png">
 
 [Adobe XD](./UI/vue-core-video-player-xd.xd)
 
