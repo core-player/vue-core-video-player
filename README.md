@@ -7,10 +7,7 @@
 
 <img width="180" src="./UI/assets/logo.png">
 
-A Lightwight Video Player For Vue.js.
-
-
-
+A Lightweight Video Player For Vue.js.
 
 
 ## Get Started
@@ -53,6 +50,7 @@ export default {
 + SSR
 + Picture-in-Picture Mode
 + Events Subscription
++ Development friendly
 
 
 ## UI
