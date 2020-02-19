@@ -6,7 +6,8 @@ const DEFAULT_CONFIG = {
   preload: 'metadata',
   playList: [],
   safeBufferTime: 2,
-  minPlayBufferTime: 1
+  minPlayBufferTime: 1,
+  resolution: '720p'
 }
 
 export default DEFAULT_CONFIG

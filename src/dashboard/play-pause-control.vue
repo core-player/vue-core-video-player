@@ -28,7 +28,7 @@ export default {
   .btn-pause{
     margin-left: 20px;
     svg{
-      width: 16px;
+      width: 15px;
     }
   }
   .btn-play{

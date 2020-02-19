@@ -12,6 +12,7 @@ import {
 } from '../helper/util'
 import { throwError } from '../helper/error'
 import { removeAllChildrenNodes, addClass } from '../helper/dom'
+import { parseMediaList } from '../helper/media'
 
 const VIDEO_EVENTS = [
   'play',
@@ -33,7 +34,7 @@ const VIDEO_EVENTS = [
 
 const VIDEO_ATTRS = [
   'muted',
-  'voloume',
+  'volume',
   'loop',
   'preload'
 ]
@@ -41,7 +42,6 @@ const VIDEO_ATTRS = [
 class BaseVideoCore {
   constructor (config) {
     this.config = Object.assign(DEFAULT_CONFIG, config)
-    this.parse(this.config)
     this.$video = this.config.videoEl
     this.$el = this.config.el
     this._eventEmitter = config.eventEmitter
@@ -51,9 +51,8 @@ class BaseVideoCore {
   }
 
   parse () {
-    const { src, playList } = this.config
-    this.initResolution(src, playList)
-    this.initResolution()
+    const { src } = this.config
+    this.initResolution(src)
   }
 
   checkSource (url) {
@@ -79,7 +78,7 @@ class BaseVideoCore {
     this._autoRegisterEvents()
     this._setVideoAttr()
     this.setSize()
-    this.emit(EVENTS.LIFECYCYLE_INITED)
+    this.emit(EVENTS.LIFECYCLE_INITED)
   }
 
   setSize () {
@@ -113,18 +112,30 @@ class BaseVideoCore {
     // TODO
   }
 
-  setResolution () {
-    const { playList, defaultResolution } = this.config
-    if (playList && playList.length > 1) {
-      for (let i = 0; i < playList.length; i++) {
-        if (playList[i].resolution === defaultResolution * 1) {
-          this.source = Object.assign(this.source, {
-            src: playList[i].url,
-            ...playList[i]
-          })
+  initResolution (source, medias = []) {
+    const { resolution } = this.config
+    this.medias = parseMediaList(source)
+    this.medias.forEach((media) => {
+      if (media.resolution === resolution) {
+        this.config.src = media.src
+      }
+    })
+    this.resolution = resolution
+    setTimeout(() => {
+      this.emit(EVENTS.SOURCE_UPDATED)
+    }, 200)
+  }
+
+  setResolution (resolution) {
+    const { medias } = this
+    if (medias && medias.length > 1) {
+      for (let i = 0; i < medias.length; i++) {
+        if (medias[i].resolution === resolution) {
+          this.resolution = resolution
           const playStatus = this.isPlaying()
           const currentTime = this.getCurrentTime()
-          this.$video.src = playList[i].url
+          this.$video.src = medias[i].src
+          this.emit(EVENTS.SOURCE_UPDATED)
           this.$video.load()
           if (playStatus && currentTime < 1) {
             this.$video.play()
@@ -133,7 +144,7 @@ class BaseVideoCore {
           let event = EVENTS.CANPLAYTHROUGH
           let seekCount = 0
           const fn = () => {
-            // some qq browsers cannot trggier seeked event after "play" event
+            // some QQ X5 browsers cannot trigger seeked event after "play" event
             if (isAndroid && isTencentGroup) {
               this.play()
               if (seekCount === 1) {
@@ -389,44 +400,6 @@ class BaseVideoCore {
 
   setSpeed (value) {
     this.$video.playbackRate = value
-  }
-
-  initResolution (videoUrl, medias = []) {
-    const { resolution } = this.config
-    // eslint-disable-next-line prefer-destructuring
-    const length = medias.length
-    // this._setFormatMedias(medias)
-    const newMedias = [].concat(medias)
-    newMedias.sort((a, b) => {
-      if (a.resolution < b.resolution) {
-        return 1
-      }
-      return -1
-    })
-    this.medias = newMedias
-    for (let i = 0; i < length; i++) {
-      // resolution.innerHTML = `${newMedias[i].resolution}p`;
-      if (newMedias[i].url === videoUrl) {
-        Object.assign(this.source, {
-          src: newMedias[i].url,
-          ...newMedias[i]
-        })
-      }
-      if (!videoUrl && newMedias[i].resolution === resolution) {
-        Object.assign(this.source, {
-          src: newMedias[i].url,
-          ...newMedias[i]
-        })
-      }
-      // use the last one
-      if (!this.source.src) {
-        // const last = length - 1;
-        Object.assign(this.source, {
-          src: newMedias[i].url,
-          ...newMedias[i]
-        })
-      }
-    }
   }
 
   destroy () {

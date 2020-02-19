@@ -1,22 +1,32 @@
 // import { HLS_EVENTS} from './module/hls';
 
-const EVENTS = {
+const ERROR = {
   ERROR_NO_MEDIA: 'ERROR_NO_MEDIA',
-  AUTOPLAYERROR: 'AUTOPLAYERROR',
-  VRMODE: 'vrmode',
+  ERROR_AUTO_PLAY: 'ERROR_AUTO_PLAY'
+}
+
+const LIFE_CYCLE = {
+  LIFECYCLE_INITING: 'lifecycle_initing',
+  LIFECYCLE_INITED: 'lifecycle_inited',
+  LIFECYCLE_PARSED: 'lifecycle_parse',
+  LIFECYCLE_STOP: 'lifecycle_stop'
+}
+
+const SOURCE = {
+  SOURCE_UPDATED: 'SOURCE_UPDATED'
+}
+
+const EVENTS = {
+  ...ERROR,
+  ...LIFE_CYCLE,
+  ...SOURCE,
   SERVICE_LOADING: 'service_loading',
   SERVICE_ENDED: 'service_ended',
   LOADING_START: 'loading_start',
   LOADING_END: 'loading_end',
-  LIFECYCYLE_INITING: 'lifecycle_initing',
-  LIFECYCYLE_INITED: 'lifecycle_inited',
-  LIFECYCYLE_PARSED: 'lifecycle_parse',
-  LIFECYCYLE_STOP: 'lifecycle_stop',
   // UI
   UI_DASHBOARD_SHOW: 'ui_dashboard_show',
   UI_DASHBOARD_HIDE: 'ui_dashboard_hide',
-  SCRUBSTART: 'scrubstart',
-  SCRUBEND: 'scrubend',
   UI_PLAY: 'ui_play',
   UI_PAUSE: 'ui_pause',
   // PLUGIN AND CORE

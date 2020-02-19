@@ -17,7 +17,7 @@ const mixins = {
   },
 
   created () {
-    this.on(EVENTS.LIFECYCYLE_INITING, ($player) => {
+    this.on(EVENTS.LIFECYCLE_INITING, ($player) => {
       this.$player = $player
       this.$container = this.$player.$el
     })

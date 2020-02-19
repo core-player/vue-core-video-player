@@ -1,6 +1,6 @@
 <template>
   <div class="vcp-container" ref="vcp-el">
-    <video ref="vcp-video" :src="src"></video>
+    <video ref="vcp-video" :src="source"></video>
     <Layers />
     <Dashboard />
   </div>
@@ -8,8 +8,9 @@
 
 <script>
 import './directives'
-import EVENTS from './constants/EVENTS'
+import { EVENTS, DEFAULT_CONFIG } from './constants'
 import { i18n } from './helper'
+import { parseMediaList } from './helper/media'
 import { initVideoCore } from './core'
 import coreMixins from './mixins'
 import Dashboard from './dashboard/dashboard.vue'
@@ -23,13 +24,29 @@ export default {
     Layers
   },
   props: {
-    src: String,
+    src: [String, Array],
     lang: String,
     controls: Boolean
   },
   beforeCreate () {
-    // console.log(this.lang)
     i18n.setLocale()
+  },
+  computed: {
+    source: function () {
+      const { src } = this
+      let resolution = this.resolution || DEFAULT_CONFIG.resolution
+      const medias = parseMediaList(src)
+      let url
+      medias.forEach((media) => {
+        if (media.resolution === resolution) {
+          url = media.src
+        }
+      })
+      if (!url) {
+        url = medias[0]
+      }
+      return url
+    }
   },
   mounted () {
     this.$player = this.videoCore = initVideoCore({
@@ -42,7 +59,7 @@ export default {
       }
     })
     this._coreID = this.videoCore.id
-    this.emit(EVENTS.LIFECYCYLE_INITING, this.$player)
+    this.emit(EVENTS.LIFECYCLE_INITING, this.$player)
   }
 
 }

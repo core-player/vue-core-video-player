@@ -29,7 +29,7 @@
         <li>
           <span class="item-name">Resolution</span>
           <div class="item-control" @click="showResolutionPanel">
-            <span>720p</span>
+            <span>{{resolution}}</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="5.963" height="11.568" viewBox="0 0 5.963 11.568"><path data-name="4" d="M.809.616l3.9 5-3.9 5.368" fill="none" stroke="#fff" stroke-width="2"/></svg>
            </div>
         </li>
@@ -39,14 +39,13 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="5.963" height="11.568" viewBox="0 0 5.963 11.568"><path data-name="5" d="M5.154.616l-3.9 5 3.9 5.368" fill="none" stroke="#fff" stroke-width="2"/></svg>
           {{$t('dashboard.btn.back')}}
         </li>
-        <li v-for="(item, index) in resolutionList" :key="index" @click="setResolution(item)">{{ item.resolution }}</li>
+        <li v-for="(item, index) in medias" :key="index" @click="setResolution(item)">{{ item.resolution }}</li>
       </ul>
       <ul class="speed-list animated fadeInRight" v-if="speedListPanel">
         <li @click="backCurrentPanel">
           <svg xmlns="http://www.w3.org/2000/svg" width="5.963" height="11.568" viewBox="0 0 5.963 11.568"><path data-name="5" d="M5.154.616l-3.9 5 3.9 5.368" fill="none" stroke="#fff" stroke-width="2"/></svg>
           {{$t('dashboard.btn.back')}}
         </li>
-        <li @click="setSpeed" data-val="0.25">0.25x</li>
         <li @click="setSpeed" data-val="0.5">0.5x</li>
         <li @click="setSpeed" data-val="1">1x</li>
         <li @click="setSpeed" data-val="1.25">1.25x</li>
@@ -58,6 +57,7 @@
 </template>
 
 <script>
+import { EVENTS } from '../constants'
 import Switch from '../widgets/switch.vue'
 import coreMixins from '../mixins'
 
@@ -72,30 +72,18 @@ export default {
   },
   data () {
     return {
+      resolution: '',
       panelShow: false,
       currentPanel: true,
       resolutionListPanel: false,
       speedListPanel: false,
-      resolutionList: [
-        {
-          resolution: 360,
-          src: ''
-        },
-        {
-          resolution: 720,
-          src: ''
-        },
-        {
-          resolution: 1080,
-          src: ''
-        }
-      ]
+      medias: []
     }
   },
 
   methods: {
     toggle (e) {
-      e.stopPropagation()
+      e && e.stopPropagation()
       this.panelShow = !this.panelShow
       if (this.panelShow) {
         this.$container.classList.add('settings-open')
@@ -119,10 +107,14 @@ export default {
       this.speedListPanel = false
       this.resolutionListPanel = false
     },
-    setResolution (val) {
-      const resolution = this.resolution
-      this.$player.setResolution(resolution)
+    setResolution (media) {
+      if (this.resolution === media.resolution) {
+        this.backCurrentPanel()
+        return
+      }
+      this.$player.setResolution(media.resolution)
       this.backCurrentPanel()
+      this.toggle()
     },
     setSpeed (e) {
       const val = +e.target.dataset['val']
@@ -132,6 +124,10 @@ export default {
   },
 
   mounted () {
+    this.on(EVENTS.SOURCE_UPDATED, () => {
+      this.medias = this.$player.medias
+      this.resolution = this.$player.resolution
+    })
     document.addEventListener('click', () => {
       if (this.panelShow) {
         this.panelShow = false
