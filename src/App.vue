@@ -24,7 +24,7 @@ const videoSource = [
   }
 ]
 
-const videoSource2 = 'https://media.vued.vanthink.cn/the_garden_of_words_trailer_english__1080p.mp4'
+// const videoSource2 = 'https://media.vued.vanthink.cn/the_garden_of_words_trailer_english__1080p.mp4'
 
 export default {
   name: 'app',

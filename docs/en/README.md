@@ -1,7 +1,5 @@
 # vue-core-video-player
 
-
-
 ## Getting Started
 
 ### Install
@@ -35,7 +33,7 @@ export default {
 }
 ```
 
-### Basic Configuration
+## Basic Configuration
 
 #### The video source
 
@@ -81,18 +79,18 @@ const videoSource = [
 [caniuse-video-format](https://caniuse.com/#search=video%20format) show which browser supports the specify video file.
 
 
-### controls
+### Controls
 
 `controls` is set for player bottom dashboard. 
 
 + String; 
 
-  + 'fixed' means the bottom dashboard is still visible to users. 'auto' means 
-  + 'auto' means the bottom dashboard will hide when there is no interaction between user and player.
+  + 'fixed' indicates the bottom dashboard is still visible to users. 
+  + 'auto' indicates the bottom dashboard will hide when there is no interaction between user and player.
 
 + Boolean;
-  + `false` means that player will hide the bottom dashboard
-  + `true`  means that player will show the bottom dashboard and work like the `'auto'` value above;
+  + `false` indicates that player will hide the bottom dashboard
+  + `true`  indicates that player will show the bottom dashboard and work like the `'auto'` value above;
 
 
 ### Autoplay
@@ -107,7 +105,7 @@ And it keep the same attributes of [HTML Video](https://developer.mozilla.org/en
 | ------------- |:-------------:|:----- |:--------------|
 | volume     | number | `0.5` | the volume of video (0-1) |
 | muted     | boolean | `true` | if set `true`, the video will be muted  |
-| cover     | string | `'./cover.png'` | it will show the cover of the video  |
+| cover     | string | `'./cover.png'` | it will show the cover of the video; If you set `autoplay`, the player auto play successfully, the `cover` property will not work.  |
 | [preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)   | string | `'metadata'`  | `'none'` means not preload video source; `'metadata'` indicates that only video metadata (e.g. length) is fetched  |
 
 

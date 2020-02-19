@@ -20,10 +20,11 @@ $ npm install vue-core-video-player --save
 
 ### Yarn
 
-
 ``` bash
 $ yarn add vue-core-video-player --save
 ```
+
+
 
 ``` vue
 <template>
@@ -43,6 +44,12 @@ export default {
 </script>
 ```
 
+## Docs
+
++ [English Document](./docs/en/README.md)
++ [中文文档](./docs/zh-CN/README.md)
++ [日本語](./docs/jp/README.md)
+
 ## Features
 
 + Custom configuration
@@ -51,6 +58,7 @@ export default {
 + Picture-in-Picture Mode
 + Events Subscription
 + Development friendly
++ Mobile friendly
 
 
 ## UI
