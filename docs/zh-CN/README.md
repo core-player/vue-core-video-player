@@ -108,19 +108,3 @@ const videoSource = [
 | logo     | string | `'./logo.png'` | 显示播放器的 logo  |
 | loop     | boolean | `true` | 会循环播放当前视频  |
 | [preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)   | string | `'metadata'`  | `'none'` 表示不会预加载视频; `'metadata'` 表示只加载视频 metadata 信息部分 |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

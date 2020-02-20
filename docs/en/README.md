@@ -110,19 +110,3 @@ And it keep the same attributes of [HTML Video](https://developer.mozilla.org/en
 | logo     | string | `'./logo.png'` | it will show the your logo of the player  |
 | loop     | boolean | `true` | it will automatically seek back to the start upon reaching the end of the video  |
 | [preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)   | string | `'metadata'`  | `'none'` means not preload video source; `'metadata'` indicates that only video metadata (e.g. length) is fetched  |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
