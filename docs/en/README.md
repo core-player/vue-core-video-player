@@ -107,6 +107,7 @@ And it keep the same attributes of [HTML Video](https://developer.mozilla.org/en
 | muted     | boolean | `true` | if set `true`, the video will be muted  |
 | cover     | string | `'./cover.png'` | it will show the cover of the video; If you set `autoplay`, the player auto play successfully, the `cover` property will not work.  |
 | title     | string | `'your title'` | it will show the title of video for better SEO  |
+| logo     | string | `'./logo.png'` | it will show the your logo of the player  |
 | [preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)   | string | `'metadata'`  | `'none'` means not preload video source; `'metadata'` indicates that only video metadata (e.g. length) is fetched  |
 
 

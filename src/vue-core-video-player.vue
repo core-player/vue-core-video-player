@@ -32,6 +32,7 @@ export default {
     },
     title: String,
     cover: String,
+    logo: String,
     controls: {
       type: [String, Boolean],
       default: true
