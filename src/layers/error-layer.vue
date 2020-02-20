@@ -1,5 +1,5 @@
 <template>
-  <div class="vcp-layer error-layer">
+  <div class="vcp-layer error-layer" v-show="show">
    <div class="error-icon">
      <svg xmlns="http://www.w3.org/2000/svg" width="194" height="194" viewBox="0 0 194 194"><g data-name="组 4" transform="translate(-850 -223)"><circle data-name="椭圆 11" cx="97" cy="97" r="97" transform="translate(850 223)" fill="#ff6060"/><g data-name="矩形 47" fill="#fff" stroke="#ccc"><path stroke="none" d="M864 310h17v13h-17z"/><path fill="none" d="M864.5 310.5h16v12h-16z"/></g><g data-name="组 5" fill="#fff" stroke="#707070"><g data-name="矩形 48" transform="translate(870 313)"><path stroke="none" d="M0 0h1v2H0z"/><rect x=".5" y=".5" height="1" fill="none"/></g><g data-name="矩形 49" transform="translate(874 313)"><path stroke="none" d="M0 0h1v2H0z"/><rect x=".5" y=".5" height="1" fill="none"/></g></g><g data-name="矩形 50" transform="translate(872 317)" fill="#fff" stroke="#707070"><path stroke="none" d="M0 0h1v2H0z"/><rect x=".5" y=".5" height="1" fill="none"/></g><g data-name="矩形 51" transform="translate(875 319)" fill="#fff" stroke="#707070"><path stroke="none" d="M0 0h1v2H0z"/><rect x=".5" y=".5" height="1" fill="none"/></g><path data-name="路径 10" d="M879.5 328.5s8.228 10.764 0 17.566 11.856 7.948 11.856 7.948 1.681 6.365-5.264 15.856 20.577-1.755 20.577-1.755l19.186 9.7L939.97 357.3" fill="none" stroke="#000" stroke-width="2"/><g data-name="矩形 52" transform="translate(869 319)" fill="#fff" stroke="#707070"><path stroke="none" d="M0 0h1v2H0z"/><rect x=".5" y=".5" height="1" fill="none"/></g><g data-name="矩形 53" fill="#fff" stroke="#000" stroke-width="2"><path stroke="none" d="M910 297h112v70H910z"/><path fill="none" d="M911 298h110v68H911z"/></g><g data-name="组 6"><path data-name="矩形 54" d="M932 372h67v3h-67z"/><path data-name="矩形 56" d="M939 367h2v5h-2z"/><path data-name="矩形 57" d="M990 367h2v5h-2z"/></g><g data-name="组 8"><path data-name="矩形 58" d="M876.117 329.526l6.344-2.958 1.268 2.719-6.344 2.958z"/><path data-name="矩形 59" fill="#ccc" d="M876.178 327.291l.906-.423.845 1.813-.906.423z"/><path data-name="路径 9" d="M879.803 325.6l.906-.422.846 1.813-.907.422z" fill="#ccc"/></g><text data-name="Error !" transform="translate(923 322)" fill="#ff6060" font-size="18" font-family="ArialMT, Arial"><tspan x="0" y="16">Error !</tspan></text></g></svg>
    </div>
@@ -19,7 +19,8 @@ export default {
   },
   data () {
     return {
-      errMsg: 'Cannot find video source'
+      errMsg: 'Cannot find video source',
+      show: false
     }
   }
 }

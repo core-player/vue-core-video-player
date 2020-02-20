@@ -81,6 +81,7 @@ class BaseVideoCore {
     this._setVideoAttr()
     this.setSize()
     this.emit(EVENTS.LIFECYCLE_INITED)
+    this._autoplay()
   }
 
   setSize () {
@@ -94,12 +95,12 @@ class BaseVideoCore {
   }
 
   _autoplay () {
-    if (this.options.autoplay && !isMobile) {
-      const _autoplayfn = () => {
-        const promise = this.player.play()
+    if (this.config.autoplay && !isMobile) {
+      const _autoPlayFn = () => {
+        const promise = this.play()
         this.autoPlayPolicy(promise)
       }
-      _autoplayfn()
+      _autoPlayFn()
     }
   }
 
@@ -295,7 +296,7 @@ class BaseVideoCore {
   }
 
   play () {
-    this.$video.play()
+    return this.$video.play()
   }
 
   pause () {
@@ -392,8 +393,8 @@ class BaseVideoCore {
   autoPlayPolicy (promise) {
     if (promise !== undefined) {
       promise.catch((error) => {
-        this.emit(EVENTS.AUTOPLAYERROR, error)
-        this.options.autoplay = false
+        this.emit(EVENTS.ERROR_AUTO_PLAY, error)
+        this.config.autoplay = false
       }).then(() => {
         // Auto-play started
       })

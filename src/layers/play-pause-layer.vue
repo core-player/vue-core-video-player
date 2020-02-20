@@ -1,5 +1,5 @@
 <template>
-  <div class="vcp-layer play-pause-layer">
+  <div class="vcp-layer play-pause-layer" v-show="show">
     <div class="btn-control btn-play">
       <svg xmlns="http://www.w3.org/2000/svg" width="41" height="47" viewBox="0 0 41 47"><path d="M23.5,0,47,41H0Z" transform="translate(41) rotate(90)" fill="#ff6060"/></svg>
     </div>
@@ -15,6 +15,11 @@ export default {
   name: 'PlayPauseLayer',
   props: {
     visible: Boolean
+  },
+  data () {
+    return {
+      show: false
+    }
   }
 }
 </script>
@@ -27,6 +32,9 @@ export default {
   bottom: 0;
   width: 100%;
   height: 100%;
+}
+.play-pause-layer {
+  background: rgba(0,0,0, .25);
 }
 .play-pause-layer .btn-control{
   display: flex;

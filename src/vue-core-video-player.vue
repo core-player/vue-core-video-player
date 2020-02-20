@@ -1,6 +1,6 @@
 <template>
   <div class="vcp-container" ref="vcp-el">
-    <video ref="vcp-video" :src="source"></video>
+    <video ref="vcp-video" :title="title" :cover="cover" :src="source"></video>
     <Layers />
     <Dashboard :controls="controls" />
   </div>
@@ -26,6 +26,12 @@ export default {
   props: {
     src: [String, Array],
     lang: String,
+    autoplay: {
+      type: Boolean,
+      default: false
+    },
+    title: String,
+    cover: String,
     controls: {
       type: [String, Boolean],
       default: true
@@ -52,7 +58,6 @@ export default {
     }
   },
   mounted () {
-    console.log(this.controls)
     this.$player = this.videoCore = initVideoCore({
       ...this.$props,
       videoEl: this.$refs['vcp-video'],

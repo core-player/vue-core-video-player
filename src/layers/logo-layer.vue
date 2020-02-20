@@ -1,7 +1,7 @@
 <template>
   <div class="vcp-layer logo-layer">
     <div class="logo-wrap">
-      <img alt="logo" :src="src" />
+      <img alt="logo" v-if="src" :src="src" />
     </div>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
 
   data () {
     return {
-      src: '/logo-white.png'
+      src: ''
     }
   }
 }

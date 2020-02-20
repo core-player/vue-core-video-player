@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <vue-core-video-player :src="source"></vue-core-video-player>
+    <vue-core-video-player :cover="cover" title="《Your Name》OST Sparkle" autoplay :src="source"></vue-core-video-player>
   </div>
 </template>
 
@@ -37,11 +37,14 @@ const videoSource = [
 
 // const videoSource2 = 'https://media.vued.vanthink.cn/the_garden_of_words_trailer_english__1080p.mp4'
 
+const cover = 'https://img1.wxzxzj.com/maxresdefault.jpg'
+
 export default {
   name: 'app',
   data () {
     return {
-      source: videoSource
+      source: videoSource,
+      cover: cover
     }
   },
   components: {

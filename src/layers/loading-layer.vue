@@ -1,5 +1,5 @@
 <template>
-  <div class="vcp-layer loading-layer">
+  <div class="vcp-layer loading-layer" v-show="show">
     <div class="loading-wrap">
       <div class="h5-layer-loading">
         <svg class="spinner" width="100%" height="100%" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
@@ -27,7 +27,8 @@ export default {
 
   data () {
     return {
-      src: '/logo-white.png'
+      src: '/logo-white.png',
+      show: false
     }
   }
 }

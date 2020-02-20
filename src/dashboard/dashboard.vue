@@ -1,5 +1,5 @@
 <template>
-  <div class="vcp-dashboard" v-show="show" ref="dashboard">
+  <div class="vcp-dashboard" autoplay v-show="show" ref="dashboard">
     <Progress />
     <Controls />
   </div>
@@ -48,7 +48,7 @@ export default {
     },
     hideDashboard () {
       this.show = false
-      this.emit(EVENTS.UI_DASHBOARD_SHOW)
+      this.emit(EVENTS.UI_DASHBOARD_HIDE)
     },
     _initAutoMode () {
       const $parent = this.$refs['dashboard'].parentNode

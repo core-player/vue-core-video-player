@@ -34,7 +34,7 @@ export default {
     }
   },
   created () {
-    if (_isSupportPIP) {
+    if ((_isSupportPIP)) {
       this.show = true
     }
   },

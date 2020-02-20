@@ -104,6 +104,7 @@ const videoSource = [
 | volume     | number | `0.5` | 控制视频音量(0-1) |
 | muted     | boolean | `true` | 设置为 `true`, 视频会静音  |
 | cover     | string | `'./cover.png'` | 显示视频的封面，如果设置 autoplay，自动播放成功后，不会显示  |
+| title     | string | `'your title'` | 展示视频的标题，方便 SEO  |
 | [preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)   | string | `'metadata'`  | `'none'` 表示不会预加载视频; `'metadata'` 表示只加载视频 metadata 信息部分 |
 
 
