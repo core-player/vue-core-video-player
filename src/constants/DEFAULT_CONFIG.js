@@ -1,5 +1,5 @@
 const DEFAULT_CONFIG = {
-  loop: true,
+  loop: false,
   volume: 1,
   muted: false,
   autoplay: false,

@@ -1,9 +1,10 @@
-> ⚠️ The package is not ready!!! Please use other vue.js package.
-
 # vue-core-video-player
 
 [![CircleCI](https://circleci.com/gh/core-player/vue-core-video-player.svg?style=shield)](https://circleci.com/gh/core-player/vue-core-video-player)
-
+[![prs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/core-player/vue-core-video-player/pulls)
+[![npm version](https://img.shields.io/npm/v/vue-core-video-player.svg?style=flat-square)](https://www.npmjs.com/package/vue-core-video-player)
+[![npm downloads](https://img.shields.io/npm/dm/vue-core-video-player.svg?style=flat-square)](https://www.npmjs.com/package/vue-core-video-player)
+[![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/hashtag/vueCoreVideoPlayer?src=hashtag_click)
 
 <img width="180" src="./UI/assets/logo.png">
 
@@ -23,7 +24,6 @@ $ npm install vue-core-video-player --save
 ``` bash
 $ yarn add vue-core-video-player --save
 ```
-
 
 
 ``` vue

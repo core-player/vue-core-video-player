@@ -104,6 +104,13 @@ class BaseVideoCore {
     }
   }
 
+  setConfig (prop, value) {
+    if (VIDEO_ATTRS.indexOf(prop) >= 0) {
+      this.config[prop] = value
+      this.$video[prop] = value
+    }
+  }
+
   setSource (source) {
     // TODO
   }
@@ -135,6 +142,10 @@ class BaseVideoCore {
       if (checkVideoPlayType(VIDEO_FORMAT[i], this.$video) && item) {
         this.config.src = item.src
         this.$video.src = this.config.src
+        this.resolution = ''
+        this.medias = [
+          item
+        ]
         return
       }
     }

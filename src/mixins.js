@@ -15,14 +15,12 @@ const mixins = {
       _coreID: ''
     }
   },
-
   created () {
     this.on(EVENTS.LIFECYCLE_INITING, ($player) => {
       this.$player = $player
       this.$container = this.$player.$el
     })
     this.on(EVENTS.PLAY, () => {
-      console.log('play!')
       this.isPlaying = true
     })
     this.on(EVENTS.PAUSE, () => {
@@ -30,18 +28,14 @@ const mixins = {
       this.isPlaying = false
     })
   },
-
   _events: {},
-
   methods: {
     play () {
       this.$player.play()
     },
-
     pause () {
       this.$player.pause()
     },
-
     enterFullscreen () {
       const el = this.$container
       if (el.mozRequestFullScreen) {
@@ -55,7 +49,6 @@ const mixins = {
       this.emit('fullscreen', true)
       this.fullscreen = true
     },
-
     cancelFullscreen (isManual) {
       const el = this.$container
       // if (isManual) {
@@ -75,11 +68,9 @@ const mixins = {
       this.emit('fullscreen', false)
       this.fullscreen = false
     },
-
     getFullscreen () {
       return (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement)
     },
-
     on (event, callback) {
       if (types.isString(event)) {
         this._events[event] = callback
@@ -94,11 +85,9 @@ const mixins = {
     emit (event, res) {
       _ee.emit(event, res)
     },
-
     addClass (cls) {
       this.$container.classList.remove(cls)
     },
-
     removeClass (cls) {
       this.$container.classList.remove(cls)
     }

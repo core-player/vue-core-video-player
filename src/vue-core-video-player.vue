@@ -1,6 +1,11 @@
 <template>
   <div class="vcp-container" ref="vcp-el">
-    <video ref="vcp-video" :title="title" :cover="cover" :src="source"></video>
+    <video
+      ref="vcp-video"
+      :title="title"
+      :cover="cover"
+      :loop="loop"
+      :src="source"></video>
     <Layers />
     <Dashboard :controls="controls" />
   </div>
@@ -28,7 +33,11 @@ export default {
     lang: String,
     autoplay: {
       type: Boolean,
-      default: false
+      default: true
+    },
+    loop: {
+      type: Boolean,
+      default: true
     },
     title: String,
     cover: String,

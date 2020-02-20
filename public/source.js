@@ -23,3 +23,5 @@ const videoSource2 = [
 ]
 
 const videoSource3 = 'https://media.vued.vanthink.cn/the_garden_of_words_trailer_english__1080p.mp4'
+
+const cover= 'https://img1.wxzxzj.com/maxresdefault.jpg'

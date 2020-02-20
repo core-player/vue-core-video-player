@@ -7,7 +7,8 @@
 export default {
   name: 'switch',
   props: {
-    change: Function
+    change: Function,
+    openStatus: Boolean
   },
 
   data () {
@@ -22,6 +23,9 @@ export default {
       if (typeof this.change === 'function') {
         this.change(this.isOpen)
       }
+    },
+    open () {
+      this.isOpen = true
     }
   }
 }

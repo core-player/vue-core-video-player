@@ -106,6 +106,7 @@ const videoSource = [
 | cover     | string | `'./cover.png'` | 显示视频的封面，如果设置 autoplay，自动播放成功后，不会显示  |
 | title     | string | `'your title'` | 展示视频的标题，方便 SEO  |
 | logo     | string | `'./logo.png'` | 显示播放器的 logo  |
+| loop     | boolean | `true` | 会循环播放当前视频  |
 | [preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)   | string | `'metadata'`  | `'none'` 表示不会预加载视频; `'metadata'` 表示只加载视频 metadata 信息部分 |
 
 
