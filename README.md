@@ -1,16 +1,72 @@
 # vue-core-video-player
 
-[![npm](https://img.shields.io/npm/v/vue-core-video-player.svg)](https://www.npmjs.com/package/vue-core-video-player) [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
+[![CircleCI](https://circleci.com/gh/core-player/vue-core-video-player.svg?style=shield)](https://circleci.com/gh/core-player/vue-core-video-player)
+[![prs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/core-player/vue-core-video-player/pulls)
+[![npm version](https://img.shields.io/npm/v/vue-core-video-player.svg?style=flat-square)](https://www.npmjs.com/package/vue-core-video-player)
+[![npm downloads](https://img.shields.io/npm/dm/vue-core-video-player.svg?style=flat-square)](https://www.npmjs.com/package/vue-core-video-player)
+[![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/hashtag/vueCoreVideoPlayer?src=hashtag_click)
 
-> A Lightwight Video Player For Vue.js.
+<img width="180" src="./UI/assets/logo.png">
 
-## Installation
+A Lightweight Video Player For Vue.js.
 
-```bash
-$ npm install --save vue-core-video-player
+
+## Get Started
+
+### Npm
+
+``` bash
+$ npm install vue-core-video-player --save
+```
+
+### Yarn
+
+``` bash
+$ yarn add vue-core-video-player --save
 ```
 
 
-## License
+``` vue
+<template>
+  <vue-core-video-player src="./videos/your_video.mp4"></vue-core-video-player>
+<template>
 
-[MIT](http://opensource.org/licenses/MIT)
+<script>
+import VueCoreVideoPlayer from 'vue-core-video-player'
+
+Vue.use(VueCoreVideoPlayer)
+
+</script>
+```
+
+## Docs
+
++ [English Document](./docs/en/README.md)
++ [中文文档](./docs/zh-CN/README.md)
++ [日本語](./docs/jp/README.md)
+
+## Features
+
++ Custom configuration
++ i18n
++ SSR
++ Picture-in-Picture Mode
++ Events Subscription
++ Development friendly
++ Mobile friendly
+
+
+## UI
+
+<img width="720px" src="./UI/ui.png">
+
+[Adobe XD](./UI/vue-core-video-player-xd.xd)
+
+[Behance](https://www.behance.net/gallery/84820301/Web-VIdeo-Player)
+
+
+## 💐 Contributions
+
++ Open pull request with improvements
++ Discuss ideas in issues
+

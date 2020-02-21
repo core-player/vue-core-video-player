@@ -1,21 +1,14 @@
-import Hello from './Hello.vue';
-import HelloJsx from './Hello.jsx';
+import i18n from './helper/i18n'
+import VueCoreVideoPlayer from './vue-core-video-player.vue'
 
-function plugin(Vue) {
-  Vue.component('hello', Hello);
-  Vue.component('hello-jsx', HelloJsx);
+const VueCoreVideoPlayerPlugin = {
+  install (Vue, options = {}) {
+    i18n.setLocale(options.lang)
+    Vue.prototype.$t = function (expression) {
+      return i18n.t(expression)
+    }
+    Vue.component('vue-core-video-player', VueCoreVideoPlayer)
+  }
 }
 
-// Install by default if using the script tag
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(plugin);
-}
-
-export default plugin;
-const version = '__VERSION__';
-// Export all components too
-export {
-  Hello,
-  HelloJsx,
-  version,
-};
+export default VueCoreVideoPlayerPlugin

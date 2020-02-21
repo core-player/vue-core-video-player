@@ -1,0 +1,32 @@
+{
+  "dashboard" : {
+    "btn": {
+      "play": "Play",
+      "pause": "Pause",
+      "fullscreen": "Full Screen",
+      "exitFullscreen": "Exit Full Screen",
+      "mute": "Mute",
+      "unmute": "Unmute",
+      "back": "Back",
+      "pip": "Picture-in-Picture"
+    },
+    "settings" : {
+      "autoplay": "Autoplay",
+      "loop": "Loop",
+      "speed": "Speed",
+      "resolution": "Resolution"
+    }
+  },
+  "layers": {
+    "error": {
+      "title": "(O_O)?  Error!",
+      "2404": "Video Source Not Found",
+      "2502": "Media Network Error",
+      "2503": "Video Cannot DECODE",
+      "2504": "Video Cannot Play!"
+    },
+    "loading": {
+      "msg": "Loading ..."
+    }
+  }
+}
