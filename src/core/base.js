@@ -1,7 +1,6 @@
 import {
   EVENTS,
   DEFAULT_CONFIG,
-  CORE,
   VIDEO_FORMAT,
   ERROR_CODE
 } from '../constants'
@@ -11,7 +10,7 @@ import {
   isTencentGroup,
   getMatchRangeTime
 } from '../helper/util'
-import { throwError } from '../helper/error'
+// import { throwError } from '../helper/error'
 import { removeAllChildrenNodes, addClass } from '../helper/dom'
 import { parseMediaList, checkVideoPlayType } from '../helper/media'
 
@@ -47,8 +46,10 @@ class BaseVideoCore {
     this.$el = this.config.el
     this._eventEmitter = config.eventEmitter
     this.state = {}
-    this.parse()
-    this.init()
+    if (this.checkSource()) {
+      this.parse()
+      this.init()
+    }
   }
 
   parse () {
@@ -57,22 +58,20 @@ class BaseVideoCore {
     this.initVideoType()
   }
 
-  checkSource (url) {
-    if (!url) {
+  checkSource () {
+    const { src } = this.config
+    if (!src) {
       const code = ERROR_CODE.NO_SOURCE.code
       this.emit(EVENTS.ERROR, {
         code
       })
-      throwError(code)
+      return false
+    } else if (Array.isArray(src)) {
+      if (!src[0] || !src[0].src) {
+        return false
+      }
     }
-    if (/\.m3u8/.test(url)) {
-      this.config.core = CORE.HLS
-      this.config.hls = url
-    }
-    if (/\.mpd/.test(url)) {
-      this.options.core = CORE.DASH
-      this.source.dash = url
-    }
+    return true
   }
 
   init () {
@@ -85,7 +84,6 @@ class BaseVideoCore {
   }
 
   setSize () {
-    console.log(this.$el.offsetWidth)
     const width = this.$el.offsetWidth
     let size = ''
     if (width <= 720) {
@@ -238,7 +236,10 @@ class BaseVideoCore {
       }
       // logger.error(e);
       if (e.target.error && e.target.error.code) {
-        this.emit('error', e.target.error)
+        const error = Object.assign({}, e.target.error, {
+          code: '250' + e.target.error.code
+        })
+        this.emit('error', error)
         return
       }
       if (typeof e !== 'object') {

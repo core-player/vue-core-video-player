@@ -25,12 +25,7 @@ $ npm install --save vue-core-video-player
 ``` vue
 import VueCoreVideoPlayer from 'vue-core-video-player'
 
-export default {
-  name: 'app',
-  components: {
-    VueCoreVideoPlayer
-  }
-}
+Vue.use(VueCoreVideoPlayer)
 ```
 
 ### 基本配置
@@ -108,3 +103,43 @@ const videoSource = [
 | logo     | string | `'./logo.png'` | 显示播放器的 logo  |
 | loop     | boolean | `true` | 会循环播放当前视频  |
 | [preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)   | string | `'metadata'`  | `'none'` 表示不会预加载视频; `'metadata'` 表示只加载视频 metadata 信息部分 |
+
+### i18n
+
+你可以自定义语言 [json](https://github.com/core-player/vue-core-video-player/blob/dev/src/lang/en.json) 数据显示定义的文案. 我们提供默认下面三种语言的支持 [here](https://github.com/core-player/vue-core-video-player/tree/dev/src/lang).
+
++ [en: English](https://github.com/core-player/vue-core-video-player/blob/dev/src/lang/en.json)
++ [zh-CN: 简体中文](https://github.com/core-player/vue-core-video-player/blob/dev/src/lang/zh-cn.json)
++ [jp: 日本語](https://github.com/core-player/vue-core-video-player/blob/dev/src/lang/jp.json)
+
+
+``` js
+import VueCoreVideoPlayer from 'vue-core-video-player'
+
+Vue.use(VueCoreVideoPlayer, {
+  lang: 'zh-CN'
+})
+```
+
+Use custom language data:
+
+``` bash
+import VueCoreVideoPlayer from 'vue-core-video-player'
+
+const kr = {
+  ...
+  "dashboard" : {
+    "btn": {
+      ....
+      "pause": "일시적인",
+      "fullscreen": "전체화면",
+      "exitFullscreen": "전체 화면 종료",
+    },
+}
+
+
+Vue.use(VueCoreVideoPlayer, {
+  lang: kr
+})
+
+```

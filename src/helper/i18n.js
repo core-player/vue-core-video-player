@@ -1,36 +1,33 @@
 import zhCNLocale from '../lang/zh-cn.json'
 import enLocale from '../lang/en.json'
-import jaLocale from '../lang/ja.json'
+import jpLocale from '../lang/jp.json'
 
-const globallocale = {
+const globalLocale = {
   'zh-CN': zhCNLocale,
-  'ja': jaLocale,
+  'jp': jpLocale,
   'en': enLocale
 }
 
-let locale
-
-const I18n = {
+const i18n = {
   t: (keyStr, defaultVal) => {
     const keys = keyStr.split('.')
     const length = keys.length
-    let last = locale
+    let last = i18n.locale
     for (let i = 0; i < length; i++) {
       if (last.hasOwnProperty(keys[i])) {
         last = last[keys[i]]
       }
     }
-
     return last || defaultVal
   },
   setLocale: (lang) => {
     if (typeof lang === 'object') {
-      locale = lang
+      i18n.locale = lang
     } else {
-      locale = globallocale[lang || 'en']
+      i18n.locale = globalLocale[lang || 'en']
     }
-    return locale
+    return i18n.locale
   }
 }
 
-export default I18n
+export default i18n

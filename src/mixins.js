@@ -24,7 +24,6 @@ const mixins = {
       this.isPlaying = true
     })
     this.on(EVENTS.PAUSE, () => {
-      console.log('pause!')
       this.isPlaying = false
     })
   },

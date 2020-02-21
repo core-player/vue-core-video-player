@@ -1,11 +1,10 @@
 <template>
   <div id="app">
-    <vue-core-video-player loop :cover="cover" title="《Your Name》OST Sparkle" autoplay :src="source"></vue-core-video-player>
+    <vue-core-video-player loop :src="source" :cover="cover" title="《Your Name》OST Sparkle" autoplay></vue-core-video-player>
   </div>
 </template>
 
 <script>
-import VueCoreVideoPlayer from './vue-core-video-player.vue'
 
 // const videoSource2 = [
 //   {
@@ -46,9 +45,6 @@ export default {
       source: videoSource,
       cover: cover
     }
-  },
-  components: {
-    VueCoreVideoPlayer
   }
 }
 </script>

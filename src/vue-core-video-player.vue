@@ -14,7 +14,6 @@
 <script>
 import './directives'
 import { EVENTS, DEFAULT_CONFIG } from './constants'
-import { i18n } from './helper'
 import { parseMediaList } from './helper/media'
 import { initVideoCore } from './core'
 import coreMixins from './mixins'
@@ -30,7 +29,6 @@ export default {
   },
   props: {
     src: [String, Array],
-    lang: String,
     autoplay: {
       type: Boolean,
       default: true
@@ -45,14 +43,18 @@ export default {
     controls: {
       type: [String, Boolean],
       default: true
+    },
+    lang: {
+      type: [String, Object],
+      default: 'en'
     }
-  },
-  beforeCreate () {
-    i18n.setLocale()
   },
   computed: {
     source: function () {
       const { src } = this
+      if (!src) {
+        return ''
+      }
       let resolution = this.resolution || DEFAULT_CONFIG.resolution
       const medias = parseMediaList(src)
       let url
@@ -62,7 +64,11 @@ export default {
         }
       })
       if (!url) {
-        url = medias[0]
+        if (typeof medias[0] === 'object' && medias[0].src) {
+          url = medias[0].src
+        } else if (typeof medias[0] === 'string') {
+          url = medias[0]
+        }
       }
       return url
     }

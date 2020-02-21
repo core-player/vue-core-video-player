@@ -25,12 +25,7 @@ Anyway, you could use the cdn bundle
 ``` vue
 import VueCoreVideoPlayer from 'vue-core-video-player'
 
-export default {
-  name: 'app',
-  components: {
-    VueCoreVideoPlayer
-  }
-}
+Vue.use(VueCoreVideoPlayer)
 ```
 
 ## Basic Configuration
@@ -110,3 +105,44 @@ And it keep the same attributes of [HTML Video](https://developer.mozilla.org/en
 | logo     | string | `'./logo.png'` | it will show the your logo of the player  |
 | loop     | boolean | `true` | it will automatically seek back to the start upon reaching the end of the video  |
 | [preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)   | string | `'metadata'`  | `'none'` means not preload video source; `'metadata'` indicates that only video metadata (e.g. length) is fetched  |
+
+
+### i18n
+
+You can use your own language [json](https://github.com/core-player/vue-core-video-player/blob/dev/src/lang/en.json) data to replace all the player text. We provide three language file reference [here](https://github.com/core-player/vue-core-video-player/tree/dev/src/lang).
+
++ [en: English](https://github.com/core-player/vue-core-video-player/blob/dev/src/lang/en.json)
++ [zh-CN: 简体中文](https://github.com/core-player/vue-core-video-player/blob/dev/src/lang/zh-cn.json)
++ [jp: 日本語](https://github.com/core-player/vue-core-video-player/blob/dev/src/lang/jp.json)
+
+
+``` js
+import VueCoreVideoPlayer from 'vue-core-video-player'
+
+Vue.use(VueCoreVideoPlayer, {
+  lang: 'zh-CN'
+})
+```
+
+Use custom language data:
+
+``` bash
+import VueCoreVideoPlayer from 'vue-core-video-player'
+
+const kr = {
+  ...
+  "dashboard" : {
+    "btn": {
+      ....
+      "pause": "일시적인",
+      "fullscreen": "전체화면",
+      "exitFullscreen": "전체 화면 종료",
+    },
+}
+
+
+Vue.use(VueCoreVideoPlayer, {
+  lang: kr
+})
+
+```

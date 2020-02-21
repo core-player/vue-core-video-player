@@ -24,4 +24,6 @@ const videoSource2 = [
 
 const videoSource3 = 'https://media.vued.vanthink.cn/the_garden_of_words_trailer_english__1080p.mp4'
 
+const videoSource4 = 'https://media.vued.vanthink.cn/sparkle_your_name_am720p.hevc.mp4'
+
 const cover= 'https://img1.wxzxzj.com/maxresdefault.jpg'

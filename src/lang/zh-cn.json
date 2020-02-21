@@ -1,8 +1,32 @@
 {
   "dashboard" : {
+    "btn": {
+      "play": "播放",
+      "pause": "暂停",
+      "fullscreen": "全屏",
+      "exitFullscreen": "退出全屏",
+      "mute": "静音",
+      "unmute": "取消静音",
+      "back": "返回",
+      "pip": "画中画模式"
+    },
     "settings" : {
       "autoplay": "自动播放",
-      "loop": "循环播放"
+      "loop": "循环播放",
+      "speed": "播放速度",
+      "resolution": "清晰度"
+    }
+  },
+  "layers": {
+    "error": {
+      "title": "(O_O)?  播放错误!",
+      "2404": "找不到播放视频",
+      "2502": "播放网络异常",
+      "2503": "视频无法解码",
+      "2504": "视频无法正常播放"
+    },
+    "loading": {
+      "msg": "加载中 ..."
     }
   }
 }

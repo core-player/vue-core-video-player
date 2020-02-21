@@ -20,14 +20,14 @@
           </div>
         </li>
         <li>
-          <span class="item-name">Speed</span>
+          <span class="item-name">{{$t('dashboard.settings.speed')}}</span>
           <div class="item-control" @click="showSpeedPanel">
             <span>1x</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="5.963" height="11.568" viewBox="0 0 5.963 11.568"><path data-name="4" d="M.809.616l3.9 5-3.9 5.368" fill="none" stroke="#fff" stroke-width="2"/></svg>
           </div>
         </li>
         <li>
-          <span class="item-name">Resolution</span>
+          <span class="item-name">{{$t('dashboard.settings.resolution')}}</span>
           <div class="item-control" v-if="resolution" @click="showResolutionPanel">
             <span>{{resolution}}</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="5.963" height="11.568" viewBox="0 0 5.963 11.568"><path data-name="4" d="M.809.616l3.9 5-3.9 5.368" fill="none" stroke="#fff" stroke-width="2"/></svg>

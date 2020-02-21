@@ -1,7 +1,7 @@
 <template>
   <div class="vcp-layer error-layer" v-show="show">
    <div class="error-icon">
-     <svg xmlns="http://www.w3.org/2000/svg" width="194" height="194" viewBox="0 0 194 194"><g data-name="组 4" transform="translate(-850 -223)"><circle data-name="椭圆 11" cx="97" cy="97" r="97" transform="translate(850 223)" fill="#ff6060"/><g data-name="矩形 47" fill="#fff" stroke="#ccc"><path stroke="none" d="M864 310h17v13h-17z"/><path fill="none" d="M864.5 310.5h16v12h-16z"/></g><g data-name="组 5" fill="#fff" stroke="#707070"><g data-name="矩形 48" transform="translate(870 313)"><path stroke="none" d="M0 0h1v2H0z"/><rect x=".5" y=".5" height="1" fill="none"/></g><g data-name="矩形 49" transform="translate(874 313)"><path stroke="none" d="M0 0h1v2H0z"/><rect x=".5" y=".5" height="1" fill="none"/></g></g><g data-name="矩形 50" transform="translate(872 317)" fill="#fff" stroke="#707070"><path stroke="none" d="M0 0h1v2H0z"/><rect x=".5" y=".5" height="1" fill="none"/></g><g data-name="矩形 51" transform="translate(875 319)" fill="#fff" stroke="#707070"><path stroke="none" d="M0 0h1v2H0z"/><rect x=".5" y=".5" height="1" fill="none"/></g><path data-name="路径 10" d="M879.5 328.5s8.228 10.764 0 17.566 11.856 7.948 11.856 7.948 1.681 6.365-5.264 15.856 20.577-1.755 20.577-1.755l19.186 9.7L939.97 357.3" fill="none" stroke="#000" stroke-width="2"/><g data-name="矩形 52" transform="translate(869 319)" fill="#fff" stroke="#707070"><path stroke="none" d="M0 0h1v2H0z"/><rect x=".5" y=".5" height="1" fill="none"/></g><g data-name="矩形 53" fill="#fff" stroke="#000" stroke-width="2"><path stroke="none" d="M910 297h112v70H910z"/><path fill="none" d="M911 298h110v68H911z"/></g><g data-name="组 6"><path data-name="矩形 54" d="M932 372h67v3h-67z"/><path data-name="矩形 56" d="M939 367h2v5h-2z"/><path data-name="矩形 57" d="M990 367h2v5h-2z"/></g><g data-name="组 8"><path data-name="矩形 58" d="M876.117 329.526l6.344-2.958 1.268 2.719-6.344 2.958z"/><path data-name="矩形 59" fill="#ccc" d="M876.178 327.291l.906-.423.845 1.813-.906.423z"/><path data-name="路径 9" d="M879.803 325.6l.906-.422.846 1.813-.907.422z" fill="#ccc"/></g><text data-name="Error !" transform="translate(923 322)" fill="#ff6060" font-size="18" font-family="ArialMT, Arial"><tspan x="0" y="16">Error !</tspan></text></g></svg>
+     <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 200 200"><g transform="translate(-963 -1663)"><circle data-name="11" cx="100" cy="100" r="100" transform="translate(963 1663)" fill="#ff5e5c"/><g data-name="46" transform="translate(1006 1727)" fill="#fff" stroke="#fff" stroke-width="3"><rect width="120" height="73" rx="2" stroke="none"/><rect x="1.5" y="1.5" width="117" height="70" rx=".5" fill="none"/></g><g data-name="12" transform="translate(1108 1743)" fill="#fff" stroke="#ff5a52" stroke-width="2"><circle cx="6" cy="6" r="6" stroke="none"/><circle cx="6" cy="6" r="5" fill="none"/></g><path data-name="1" fill="none" stroke="#fff" stroke-width="3" d="M1057.5 1728.5l30-22"/><path data-name="2" fill="none" stroke="#fff" stroke-width="3" d="M1036.5 1697.5l22 30"/><path data-name="48" d="M1018 1737h80a4 4 0 0 1 4 4v45a5 5 0 0 1-5 5h-78a5 5 0 0 1-5-5v-45a4 4 0 0 1 4-4z" fill="#2785f2"/><g data-name="4" fill="#ff584c"><path data-name="49" d="M1108 1757h3v2h-3z"/><path data-name="50" d="M1113 1757h3v2h-3z"/><path data-name="51" d="M1118 1757h3v2h-3z"/></g><g data-name="5" fill="#ff584c"><path data-name="49" d="M1108 1760h3v2h-3z"/><path data-name="50" d="M1113 1760h3v2h-3z"/><path data-name="51" d="M1118 1760h3v2h-3z"/></g></g></svg>
    </div>
    <div class="error-msg-wrap">
      <h2>{{$t('layers.error.title')}}</h2>
@@ -11,17 +11,29 @@
 </template>
 
 <script>
+import { EVENTS } from '../constants'
+import coreMixins from '../mixins'
+import { i18n } from '../helper'
 
 export default {
   name: 'CoverLayer',
+  mixins: [coreMixins],
   props: {
-    visible: Boolean
+    dsiable: Boolean
   },
   data () {
     return {
-      errMsg: 'Cannot find video source',
+      errMsg: '',
       show: false
     }
+  },
+  mounted () {
+    this.on(EVENTS.ERROR, (e) => {
+      console.log(e)
+      this.show = true
+      var errorKey = 'layers.error.' + e.code
+      this.errMsg = i18n.t(errorKey, '')
+    })
   }
 }
 </script>

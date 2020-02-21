@@ -19,7 +19,11 @@
   },
   "layers": {
     "error": {
-      "title": "(O_O)?  Error!"
+      "title": "(O_O)?  Error!",
+      "2404": "Video Source Not Found",
+      "2502": "Media Network Error",
+      "2503": "Video Cannot DECODE",
+      "2504": "Video Cannot Play!"
     },
     "loading": {
       "msg": "Loading ..."

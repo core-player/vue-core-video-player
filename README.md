@@ -32,14 +32,9 @@ $ yarn add vue-core-video-player --save
 <template>
 
 <script>
-import VueCoreVideoPlayer from 'vue-core-video-player';
+import VueCoreVideoPlayer from 'vue-core-video-player'
 
-export default {
-  name: 'app',
-  components: {
-    VueCoreVideoPlayer
-  }
-}
+Vue.use(VueCoreVideoPlayer)
 
 </script>
 ```
