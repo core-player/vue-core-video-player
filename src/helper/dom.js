@@ -29,6 +29,9 @@ export function hasClass (el, className) {
 };
 
 export function addClass (dom, className) {
+  if (!className || !dom) {
+    return
+  }
   const classGroup = className.split(' ')
   if (dom.classList && classGroup.length === 1) {
     dom.classList.add(className)

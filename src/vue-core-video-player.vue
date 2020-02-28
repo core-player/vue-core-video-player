@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import './style/common.less'
+
 import './directives'
 import { EVENTS, DEFAULT_CONFIG } from './constants'
 import { parseMediaList } from './helper/media'
@@ -90,11 +92,12 @@ export default {
 }
 </script>
 
-<style>
+<style land="less">
+
 .vcp-container {
   position: relative;
-  width: 720px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
   background-color: #000;
 }
@@ -102,6 +105,5 @@ export default {
   background-color: #000;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 </style>

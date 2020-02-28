@@ -9,11 +9,15 @@
   "main": "dist/vue-core-video-player.common.js",
   "dependencies": {
     "core-js": "^2.6.5",
+    "eslint-plugin-import": "^2.20.1",
     "event-emitter": "^0.3.5",
     "ismobilejs": "^1.0.3",
     "vue": "^2.6.10"
   },
-  "files": ["dist", "docs"],
+  "files": [
+    "dist",
+    "docs"
+  ],
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-plugin-eslint": "^3.11.0",

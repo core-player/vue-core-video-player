@@ -86,7 +86,7 @@ class BaseVideoCore {
   setSize () {
     const width = this.$el.offsetWidth
     let size = ''
-    if (width <= 720) {
+    if (width <= 763) {
       size = 'small'
     }
     addClass(this.$el, size)

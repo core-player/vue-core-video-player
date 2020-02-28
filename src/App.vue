@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <vue-core-video-player loop :src="source" :cover="cover" title="《Your Name》OST Sparkle" autoplay></vue-core-video-player>
+    <div class="test-player-wrap">
+      <vue-core-video-player loop :src="source" :cover="cover" title="《Your Name》OST Sparkle" autoplay></vue-core-video-player>
+    </div>
   </div>
 </template>
 
@@ -23,18 +25,18 @@
 //   }
 // ]
 
-const videoSource = [
-  {
-    src: 'https://media.vued.vanthink.cn/sparkle_your_name_am720p.webm',
-    type: 'video/webm'
-  },
-  {
-    src: 'https://media.vued.vanthink.cn/sparkle_your_name_am720p.mp4',
-    type: 'video/mp4'
-  }
-]
+// const videoSource = [
+//   {
+//     src: 'https://media.vued.vanthink.cn/sparkle_your_name_am720p.webm',
+//     type: 'video/webm'
+//   },
+//   {
+//     src: 'https://media.vued.vanthink.cn/sparkle_your_name_am720p.mp4',
+//     type: 'video/mp4'
+//   }
+// ]
 
-// const videoSource2 = 'https://media.vued.vanthink.cn/the_garden_of_words_trailer_english__1080p.mp4'
+const videoSource2 = 'https://media.vued.vanthink.cn/the_garden_of_words_trailer_english__1080p.mp4'
 
 const cover = 'https://img1.wxzxzj.com/maxresdefault.jpg'
 
@@ -42,7 +44,7 @@ export default {
   name: 'app',
   data () {
     return {
-      source: videoSource,
+      source: videoSource2,
       cover: cover
     }
   }
@@ -60,5 +62,11 @@ export default {
 }
 #app .vue-core-video-player-containers {
   margin: 60px auto;
+}
+#app .test-player-wrap {
+  width: 720px;
+  height: 405px;
+  position: relative;
+  margin: 80px auto;
 }
 </style>
