@@ -11,7 +11,7 @@ import {
   getMatchRangeTime
 } from '../helper/util'
 // import { throwError } from '../helper/error'
-import { removeAllChildrenNodes, addClass } from '../helper/dom'
+import { addClass } from '../helper/dom'
 import { parseMediaList, checkVideoPlayType } from '../helper/media'
 
 const VIDEO_EVENTS = [
@@ -46,32 +46,46 @@ class BaseVideoCore {
     this.$el = this.config.el
     this._eventEmitter = config.eventEmitter
     this.state = {}
-    if (this.checkSource()) {
-      this.parse()
+    const { src } = this.config
+    if (this.checkSource(src)) {
+      this.parse(src)
       this.init()
     }
   }
 
-  parse () {
-    const { src } = this.config
-    this.initResolution(src)
+  parse (source) {
+    this.initResolution(source)
     this.initVideoType()
   }
 
-  checkSource () {
-    const { src } = this.config
-    if (!src) {
+  checkSource (source) {
+    if (!source) {
       const code = ERROR_CODE.NO_SOURCE.code
       this.emit(EVENTS.ERROR, {
         code
       })
       return false
-    } else if (Array.isArray(src)) {
-      if (!src[0] || !src[0].src) {
+    } else if (Array.isArray(source)) {
+      if (!source[0] || !source[0].src) {
         return false
       }
     }
     return true
+  }
+
+  setSource (source) {
+    if (this.checkSource(source)) {
+      this.parse(source)
+      const isPlaying = this.isPlaying()
+      if (isPlaying) {
+        this.pause()
+        const playFn = () => {
+          this.play()
+          this.$video.removeEventListener(EVENTS.DURATIONCHANGE, playFn)
+        }
+        this.$video.addEventListener(EVENTS.DURATIONCHANGE, playFn)
+      }
+    }
   }
 
   init () {
@@ -107,10 +121,6 @@ class BaseVideoCore {
       this.config[prop] = value
       this.$video[prop] = value
     }
-  }
-
-  setSource (source) {
-    // TODO
   }
 
   initResolution (source, medias = []) {
@@ -440,8 +450,16 @@ class BaseVideoCore {
     this._eventEmitter.on(key, callback)
   }
 
+  off (key, callback) {
+    this._eventEmitter.off(key, callback)
+  }
+
   emit (key, data) {
     this._eventEmitter.emit(key, data)
+  }
+
+  once (key, callback) {
+    this._eventEmitter.once(key, callback)
   }
 
   static set debug (value) {

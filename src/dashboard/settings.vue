@@ -26,7 +26,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="5.963" height="11.568" viewBox="0 0 5.963 11.568"><path data-name="4" d="M.809.616l3.9 5-3.9 5.368" fill="none" stroke="#fff" stroke-width="2"/></svg>
           </div>
         </li>
-        <li>
+        <li v-show="medias.length > 1">
           <span class="item-name">{{$t('dashboard.settings.resolution')}}</span>
           <div class="item-control" v-if="resolution" @click="showResolutionPanel">
             <span>{{resolution}}</span>
@@ -97,6 +97,9 @@ export default {
       e.stopPropagation()
     },
     showResolutionPanel (e) {
+      if (this.medias.length <= 1) {
+        return
+      }
       this.currentPanel = false
       this.resolutionListPanel = true
     },
@@ -170,7 +173,7 @@ export default {
     display: block;
     right: 0px;
     left: auto;
-    min-height: 160px;
+    min-height: 130px;
     transform: translateX(0);
     .current-panel {
       width: 180px;

@@ -72,10 +72,14 @@ export default {
           url = medias[0]
         }
       }
+      if (this.$player) {
+        this.$player.setSource(src)
+      }
       return url
     }
   },
   mounted () {
+    // const self = this
     this.$player = this.videoCore = initVideoCore({
       ...this.$props,
       videoEl: this.$refs['vcp-video'],
@@ -88,9 +92,9 @@ export default {
     this._coreID = this.videoCore.id
     this.emit(EVENTS.LIFECYCLE_INITING, this.$player)
   },
-  beforeDestroy() {
+  beforeDestroy () {
     this.$player.destroy()
-  },
+  }
 
 }
 </script>

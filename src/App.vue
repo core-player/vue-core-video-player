@@ -50,8 +50,8 @@ export default {
     }
   },
   methods: {
-    change() {
-      this.source = videoSource;
+    change () {
+      this.source = videoSource
     }
   },
 }
