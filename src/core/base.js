@@ -430,7 +430,6 @@ class BaseVideoCore {
 
   destroy () {
     this.pause()
-    removeAllChildrenNodes(this.el)
   }
 
   getVideoElement () {

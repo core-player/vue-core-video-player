@@ -146,6 +146,8 @@ export default {
     document.addEventListener('click', () => {
       if (this.panelShow) {
         this.panelShow = false
+        this.speedListPanel = false
+        this.resolutionListPanel = false
         this.$container.classList.remove('settings-open')
       }
     })

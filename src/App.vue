@@ -3,27 +3,28 @@
     <div class="test-player-wrap">
       <vue-core-video-player loop :src="source" :cover="cover" title="《Your Name》OST Sparkle" autoplay></vue-core-video-player>
     </div>
+    <button @click="change"> Change Source</button>
   </div>
 </template>
 
 <script>
 
-// const videoSource2 = [
-//   {
-//     src: 'https://media.vued.vanthink.cn/y2mate.com%20-%20Sparkle%20_%20Your%20Name%20AMV_K_7To_y9IAM_240p.mp4',
-//     resolution: '240p'
-//   },
-//   {
-//     src: 'https://media.vued.vanthink.cn/y2mate.com%20-%20Sparkle%20_%20Your%20Name%20AMV_K_7To_y9IAM_360p.mp4',
-//     resolution: '360p'
-//   }, {
-//     src: 'https://media.vued.vanthink.cn/sparkle_your_name_am720p.mp4',
-//     resolution: '720p'
-//   }, {
-//     src: 'https://media.vued.vanthink.cn/y2mate.com%20-%20sparkle_your_name_amv_K_7To_y9IAM_1080p.mp4',
-//     resolution: '1080p'
-//   }
-// ]
+const videoSource = [
+  {
+    src: 'https://media.vued.vanthink.cn/y2mate.com%20-%20Sparkle%20_%20Your%20Name%20AMV_K_7To_y9IAM_240p.mp4',
+    resolution: '240p'
+  },
+  {
+    src: 'https://media.vued.vanthink.cn/y2mate.com%20-%20Sparkle%20_%20Your%20Name%20AMV_K_7To_y9IAM_360p.mp4',
+    resolution: '360p'
+  }, {
+    src: 'https://media.vued.vanthink.cn/sparkle_your_name_am720p.mp4',
+    resolution: '720p'
+  }, {
+    src: 'https://media.vued.vanthink.cn/y2mate.com%20-%20sparkle_your_name_amv_K_7To_y9IAM_1080p.mp4',
+    resolution: '1080p'
+  }
+]
 
 // const videoSource = [
 //   {
@@ -47,7 +48,12 @@ export default {
       source: videoSource2,
       cover: cover
     }
-  }
+  },
+  methods: {
+    change() {
+      this.source = videoSource;
+    }
+  },
 }
 </script>
 

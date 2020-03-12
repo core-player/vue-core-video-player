@@ -87,7 +87,10 @@ export default {
     })
     this._coreID = this.videoCore.id
     this.emit(EVENTS.LIFECYCLE_INITING, this.$player)
-  }
+  },
+  beforeDestroy() {
+    this.$player.destroy()
+  },
 
 }
 </script>

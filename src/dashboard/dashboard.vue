@@ -118,6 +118,9 @@ export default {
 .small  .vcp-dashboard{
   height: 49px;
 }
+.settings-open .vcp-dashboard {
+  display: block !important;
+}
 .small  .vcp-dashboard .vcp-controls {
   height: 40px;
 }

@@ -38,14 +38,12 @@ export default {
 
   methods: {
     seek (e) {
-      console.log(44444)
       let top = e.offsetY
       if (e.target.className === 'volume-current') {
         top += e.target.offsetTop
       }
       const maxVal = e.currentTarget.offsetHeight
       const volume = 1 - top / maxVal
-      console.log(volume)
       if (this.isMuted) {
         this.$player.setMuted(false)
       }
