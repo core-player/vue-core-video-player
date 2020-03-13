@@ -18,18 +18,49 @@
 </template>
 
 <script>
+import { EVENTS } from '../constants'
+import coreMixins from '../mixins'
+
+const showTimeout = 600
 
 export default {
   name: 'LoadingLayer',
-  props: {
-    visible: Boolean
-  },
-
+  mixins: [coreMixins],
   data () {
     return {
-      src: '/logo-white.png',
       show: false
     }
+  },
+
+  methods: {
+    showLoading (isForce) {
+      if (isForce) {
+        this.show = true
+        return
+      }
+      window.clearTimeout(this._timeout)
+      this._timeout = setTimeout(() => {
+        this.show = true
+      }, showTimeout)
+    },
+    hideLoading () {
+      window.clearTimeout(this._timeout)
+      this.show = false
+    }
+  },
+
+  created () {
+    // safari trigger canplaythrough
+    this.on([EVENTS.CANPLAY, EVENTS.CANPLAYTHROUGH, EVENTS.PLAY, EVENTS.LOADEDMETADATA, EVENTS.SEEKED, EVENTS.ERROR], () => {
+      this.hideLoading()
+    })
+    this.on([EVENTS.SEEKING, EVENTS.STALLED, EVENTS.LOADSTART], (item) => {
+      console.log(3333)
+      this.showLoading()
+    })
+    this.on(['playing'], () => {
+      this.hideLoading()
+    })
   }
 }
 </script>
@@ -60,6 +91,10 @@ export default {
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
       animation: rotator @duration linear infinite;
+    }
+
+    p {
+      padding-top: 20px;
     }
 
     @keyframes rotator {
