@@ -104,7 +104,7 @@ export default {
       const stopMove = function () {
         self._dragEl = null
         if (isMobile) {
-          self.$refs['container'].removeEventListener('touchmove', move, false);
+          self.$refs['container'].removeEventListener('touchmove', move, false)
           document.removeEventListener('touchend', stopMove, false)
           return
         }
