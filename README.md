@@ -15,18 +15,15 @@ $ npm install vue-core-video-player --save
 
 ``` vue
 <template>
-  <vue-core-video-player src="./videos/your_video.mp4"></vue-core-video-player>
+  <div class="player-container">
+    <vue-core-video-player src="./videos/your_video.mp4"></vue-core-video-player>
+  </div>
 <template>
 
 <script>
-import VueCoreVideoPlayer from 'vue-core-video-player';
+import VueCoreVideoPlayer from 'vue-core-video-player'
 
-export default {
-  name: 'app',
-  components: {
-    VueCoreVideoPlayer
-  }
-}
+Vue.use(VueCoreVideoPlayer)
 
 </script>
 ```

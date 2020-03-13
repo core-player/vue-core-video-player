@@ -46,4 +46,8 @@ Write the component in your player container.
 </div>
 ```
 
+<ClientOnly>
+  <player />
+</ClientOnly>
+
 
