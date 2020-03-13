@@ -40,6 +40,8 @@ Vue.use(VueCoreVideoPlayer)
 
 </script>
 ```
+[View Demo](http://events.jackpu.com/vue-core-video-player-examples/)
+
 
 ## Docs
 

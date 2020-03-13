@@ -55,7 +55,6 @@ export default {
       this.hideLoading()
     })
     this.on([EVENTS.SEEKING, EVENTS.STALLED, EVENTS.LOADSTART], (item) => {
-      console.log(3333)
       this.showLoading()
     })
     this.on(['playing'], () => {
