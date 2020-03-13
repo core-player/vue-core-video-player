@@ -1,5 +1,5 @@
 <template>
-  <div class="vcp-layer title-layer" v-show="show">
+  <div class="vcp-layer title-layer" v-show="show && title.length">
     <div class="video-title">{{title}}</div>
   </div>
 </template>

@@ -28,7 +28,9 @@ $ yarn add vue-core-video-player --save
 
 ``` vue
 <template>
-  <vue-core-video-player src="./videos/your_video.mp4"></vue-core-video-player>
+  <div class="player-container">
+    <vue-core-video-player src="./videos/your_video.mp4"></vue-core-video-player>
+  </div>
 <template>
 
 <script>
@@ -41,8 +43,8 @@ Vue.use(VueCoreVideoPlayer)
 
 ## Docs
 
-+ [English Document](./docs/en/README.md)
-+ [中文文档](./docs/zh-CN/README.md)
++ [English Document](https://core-player.github.io/vue-core-video-player/)
++ [中文文档](https://core-player.github.io/vue-core-video-player/zh/)
 + [日本語](./docs/jp/README.md)
 
 ## Features
@@ -53,7 +55,7 @@ Vue.use(VueCoreVideoPlayer)
 + Picture-in-Picture Mode
 + Events Subscription
 + Development friendly
-+ Mobile friendly
++ Mobile Adaptation
 
 
 ## UI

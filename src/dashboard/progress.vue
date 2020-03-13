@@ -1,9 +1,9 @@
 <template>
-  <div class="vcp-progress-hover" @click="seek">
-    <div class="vcp-progress">
+  <div class="vcp-progress-hover" ref="input" @click="seek">
+    <div class="vcp-progress" ref="container">
       <div class="vcp-progress-loaded" :style="{width: bufferProgress + '%'}"></div>
       <div class="vcp-progress-played" :style="{width: progress + '%'}">
-        <div class="thumb-drag"></div>
+        <div class="thumb-drag" @touchstart="startDrag" @mousedown="startDrag" ref="thumb"></div>
       </div>
     </div>
   </div>
@@ -12,7 +12,8 @@
 <script>
 import { EVENTS } from '../constants'
 import coreMixins from '../mixins'
-import { getElementOffsets } from '../helper/util'
+import { getElementOffsets, isMobile } from '../helper/util'
+import { drag } from '../helper/dom'
 
 export default {
   name: 'Progress',
@@ -28,6 +29,9 @@ export default {
   },
   created () {
     this.on(EVENTS.TIMEUPDATE, () => {
+      if (this._dragEl) {
+        return
+      }
       const time = this.$player.getCurrentTime()
       const duration = this.$player.getDuration()
       // this.setProgressPlayedPercent();
@@ -41,9 +45,7 @@ export default {
         this.bufferProgress = (bufferTime / duration * 100).toFixed(2)
       }
     })
-    // const initTime = Date.now()
     this.on(EVENTS.LOADSTART, () => {
-      // const currentTime = Date.now() - initTime
       const bufferTime = this.$player.getBufferTime()
       const duration = this.$player.getDuration()
       this.bufferProgress = (bufferTime / duration * 100).toFixed(2)
@@ -62,6 +64,60 @@ export default {
       this.progress = val
       const duration = this.$player.getDuration()
       this.$player.seek(left / maxVal * duration)
+    },
+
+    startDrag (e) {
+      this.initDrag(e)
+      this.startSeek = true
+    },
+
+    initDrag (e) {
+      e.preventDefault()
+      const self = this
+      this._dragEl = this.$refs['thumb']
+      const maxVal = this.$refs['input'].offsetWidth
+      let marginLeft = getComputedStyle(this._dragEl, null).marginLeft
+      if (marginLeft) {
+        marginLeft = parseFloat(marginLeft)
+      }
+      const coor = {
+        x: (isMobile ? e.touches[0].clientX : e.pageX) - this._dragEl.offsetLeft + marginLeft,
+        y: (isMobile ? e.touches[0].clientX : e.clientY) - this._dragEl.offsetTop,
+        maxLeft: maxVal
+      }
+      if (this.getFullscreen()) {
+        coor.x = e.pageX - this._dragEl.offsetLeft
+      }
+      const move = function (ev) {
+        if (!self._dragEl) {
+          return
+        }
+        const newCoor = drag(ev, self._dragEl, coor)
+        if (newCoor) {
+          const left = newCoor.left
+          const val = (left / maxVal * 100).toFixed(2)
+          self.progress = val
+          const duration = self.$player.getDuration()
+          self.$player.seek(left / maxVal * duration)
+        }
+      }
+      const stopMove = function () {
+        self._dragEl = null
+        if (isMobile) {
+          self.$refs['container'].removeEventListener('touchmove', move, false)
+          document.removeEventListener('touchend', stopMove, false)
+          return
+        }
+        document.removeEventListener('mousemove', move, false)
+        document.removeEventListener('mouseup', stopMove, false)
+      }
+      if (isMobile) {
+        self.$refs['container'].addEventListener('touchmove', move, false)
+        document.addEventListener('touchend', stopMove, false)
+        return
+      }
+      document.addEventListener('mousemove', move, false)
+      document.addEventListener('mouseup', stopMove, false)
     }
   }
 }
@@ -74,6 +130,7 @@ export default {
   left: 0;
   height: 12px;
   width: 100%;
+  cursor: pointer;
   .vcp-progress {
     position: absolute;
     bottom: 0;

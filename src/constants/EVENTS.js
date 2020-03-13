@@ -40,6 +40,7 @@ const EVENTS = {
   PLAY: 'play',
   PAUSE: 'pause',
   LOADEDDATA: 'loadeddata',
+  CANPLAY: 'canplay',
   CANPLAYTHROUGH: 'canplaythrough',
   ERROR: 'error',
   DURATIONCHANGE: 'durationchange',
@@ -54,6 +55,7 @@ const EVENTS = {
   VOLUMECHANGE: 'volumechange',
   EXIT: 'exit',
   PROGRESS: 'progress',
+  STALLED: 'stalled',
   LOADSTART: 'loadstart',
   RESOLUTION_UPDATE: 'resolution_update'
   // hls events docs: https://github.com/video-dev/hls.js/blob/master/src/events.js

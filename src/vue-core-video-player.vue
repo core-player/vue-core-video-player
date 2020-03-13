@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import './style/common.less'
+
 import './directives'
 import { EVENTS, DEFAULT_CONFIG } from './constants'
 import { parseMediaList } from './helper/media'
@@ -70,10 +72,14 @@ export default {
           url = medias[0]
         }
       }
+      if (this.$player) {
+        this.$player.setSource(src)
+      }
       return url
     }
   },
   mounted () {
+    // const self = this
     this.$player = this.videoCore = initVideoCore({
       ...this.$props,
       videoEl: this.$refs['vcp-video'],
@@ -85,16 +91,20 @@ export default {
     })
     this._coreID = this.videoCore.id
     this.emit(EVENTS.LIFECYCLE_INITING, this.$player)
+  },
+  beforeDestroy () {
+    this.$player.destroy()
   }
 
 }
 </script>
 
-<style>
+<style land="less">
+
 .vcp-container {
   position: relative;
-  width: 720px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
   background-color: #000;
 }
@@ -102,6 +112,5 @@ export default {
   background-color: #000;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 </style>

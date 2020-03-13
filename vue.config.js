@@ -1,5 +1,6 @@
 module.exports = {
   css: {
+    extract: false,
     loaderOptions: {
       css: {
         test: /\.less$/,

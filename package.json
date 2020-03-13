@@ -1,19 +1,23 @@
 {
   "name": "vue-core-video-player",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.2",
   "scripts": {
     "dev": "vue-cli-service serve",
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib ./src/index.js",
     "lint": "vue-cli-service lint"
   },
+  "main": "dist/vue-core-video-player.common.js",
   "dependencies": {
     "core-js": "^2.6.5",
+    "eslint-plugin-import": "^2.20.1",
     "event-emitter": "^0.3.5",
     "ismobilejs": "^1.0.3",
     "vue": "^2.6.10"
   },
+  "files": [
+    "dist",
+    "docs"
+  ],
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-plugin-eslint": "^3.11.0",
