@@ -53,7 +53,7 @@ export default {
     change () {
       this.source = videoSource
     }
-  },
+  }
 }
 </script>
 

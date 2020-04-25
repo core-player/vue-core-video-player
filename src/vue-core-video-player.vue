@@ -5,6 +5,7 @@
       :title="title"
       :cover="cover"
       :loop="loop"
+      :playsinline="playsinline"
       :src="source"></video>
     <Layers />
     <Dashboard :controls="controls" />
@@ -37,7 +38,11 @@ export default {
     },
     loop: {
       type: Boolean,
-      default: true
+      default: false
+    },
+    playsinline: {
+      type: Boolean,
+      default: false
     },
     title: String,
     cover: String,
