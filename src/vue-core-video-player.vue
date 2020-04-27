@@ -54,6 +54,9 @@ export default {
     lang: {
       type: [String, Object],
       default: 'en'
+    },
+    core: {
+      type: Function
     }
   },
   computed: {

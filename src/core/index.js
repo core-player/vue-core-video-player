@@ -8,7 +8,9 @@ const VPC_CORE_INS = {}
 export function initVideoCore (config) {
   const id = guid()
   config._id = id
-  let Core = BaseVideoCore
+  console.log(config)
+  const Core = config.core || BaseVideoCore
+
   const core = new Core(config)
   core.id = id
   VPC_CORE_INS[id] = core

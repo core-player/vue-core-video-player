@@ -1,6 +1,7 @@
 import i18n from './helper/i18n'
 import VueCoreVideoPlayer from './vue-core-video-player.vue'
 import BaseVideoCore from './core/base'
+import EVENTS from './constants/EVENTS'
 
 const VueCoreVideoPlayerPlugin = {
   install (Vue, options = {}) {
@@ -14,5 +15,6 @@ const VueCoreVideoPlayerPlugin = {
 
 export default VueCoreVideoPlayerPlugin
 export {
-  BaseVideoCore
+  BaseVideoCore,
+  EVENTS
 }
