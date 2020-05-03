@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="test-player-wrap">
-      <vue-core-video-player loop :src="source" :cover="cover" title="《Your Name》OST Sparkle" autoplay></vue-core-video-player>
+      <vue-core-video-player loop :src="source" title="《Your Name》OST Sparkle" autoplay></vue-core-video-player>
     </div>
     <button @click="change"> Change Source</button>
   </div>
