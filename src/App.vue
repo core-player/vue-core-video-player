@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="test-player-wrap">
-      <vue-core-video-player loop :src="source" title="《Your Name》OST Sparkle" autoplay></vue-core-video-player>
+      <vue-core-video-player @play="playFunc" loop :src="source" title="《Your Name》OST Sparkle" autoplay></vue-core-video-player>
     </div>
     <button @click="change"> Change Source</button>
   </div>
@@ -52,6 +52,9 @@ export default {
   methods: {
     change () {
       this.source = videoSource
+    },
+    playFunc () {
+      console.log('play!')
     }
   }
 }
