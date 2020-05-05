@@ -1,12 +1,19 @@
 {
   "name": "vue-core-video-player",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib ./src/index.js",
     "lint": "vue-cli-service lint"
   },
   "main": "dist/vue-core-video-player.common.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/core-player/vue-core-video-player.git"
+  },
+  "bugs": {
+    "url": "https://github.com/core-player/vue-core-video-player/issues"
+  },
   "dependencies": {
     "core-js": "^2.6.5",
     "eslint-plugin-import": "^2.20.1",

@@ -29,7 +29,7 @@ $ yarn add vue-core-video-player --save
 ``` vue
 <template>
   <div class="player-container">
-    <vue-core-video-player src="./videos/your_video.mp4"></vue-core-video-player>
+    <vue-core-video-player @play="your_method" src="./videos/your_video.mp4"></vue-core-video-player>
   </div>
 <template>
 
