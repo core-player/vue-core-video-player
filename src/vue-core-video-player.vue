@@ -97,6 +97,13 @@ export default {
         emit: this.emit
       }
     })
+    Object.values(EVENTS).forEach(item => {
+      this.$player.on(item, (e) => {
+        if (typeof this.$listeners[item] === 'function') {
+          this.$listeners[item](e)
+        }
+      })
+    })
     this._coreID = this.videoCore.id
     this.emit(EVENTS.LIFECYCLE_INITING, this.$player)
   },
