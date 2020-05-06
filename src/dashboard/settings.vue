@@ -58,7 +58,7 @@
 
 <script>
 import { EVENTS } from '../constants'
-import Switch from '../widgets/switch.vue'
+import SettingSwitch from '../widgets/setting-switch.vue'
 import coreMixins from '../mixins'
 
 export default {
@@ -68,7 +68,7 @@ export default {
   },
   mixins: [coreMixins],
   components: {
-    'widgets-switch': Switch
+    'widgets-switch': SettingSwitch
   },
   data () {
     return {

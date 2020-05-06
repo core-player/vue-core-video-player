@@ -5,7 +5,7 @@
 <script>
 
 export default {
-  name: 'switch',
+  name: 'setting-switch',
   props: {
     change: Function,
     openStatus: Boolean
