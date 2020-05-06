@@ -14,6 +14,7 @@
   "bugs": {
     "url": "https://github.com/core-player/vue-core-video-player/issues"
   },
+  "license": "MIT",
   "dependencies": {
     "core-js": "^2.6.5",
     "eslint-plugin-import": "^2.20.1",

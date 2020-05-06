@@ -59,6 +59,10 @@ Vue.use(VueCoreVideoPlayer)
 + Development friendly
 + Mobile Adaptation
 
+### Who using it
+
+Welcome to submit your website using the package [Demo Case Collection](https://github.com/core-player/vue-core-video-player/issues/26)
+
 
 ## UI
 
