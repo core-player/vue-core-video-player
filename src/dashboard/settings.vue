@@ -58,7 +58,7 @@
 
 <script>
 import { EVENTS } from '../constants'
-import Switch from '../widgets/switch.vue'
+import SettingSwitch from '../widgets/setting-switch.vue'
 import coreMixins from '../mixins'
 
 export default {
@@ -68,7 +68,7 @@ export default {
   },
   mixins: [coreMixins],
   components: {
-    'widgets-switch': Switch
+    'widgets-switch': SettingSwitch
   },
   data () {
     return {
@@ -140,6 +140,8 @@ export default {
     this.on(EVENTS.SOURCE_UPDATED, () => {
       this.medias = this.$player.medias
       this.resolution = this.$player.resolution
+    })
+    this.on(EVENTS.LIFECYCLE_INITING, () => {
       const { autoplay, loop } = this.$player.config
       if (autoplay) {
         this.$refs['autoplaySwitch'].open()
