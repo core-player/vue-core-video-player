@@ -140,6 +140,8 @@ export default {
     this.on(EVENTS.SOURCE_UPDATED, () => {
       this.medias = this.$player.medias
       this.resolution = this.$player.resolution
+    })
+    this.on(EVENTS.LIFECYCLE_INITING, () => {
       const { autoplay, loop } = this.$player.config
       if (autoplay) {
         this.$refs['autoplaySwitch'].open()
