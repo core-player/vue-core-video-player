@@ -14,13 +14,20 @@ module.exports = {
       '/' : {
         sidebar: [
           {
-            title: 'Introduction',   // 必要的
-            path: '/',      // 可选的, 应该是一个绝对路径
-            collapsable: true, 
+            title: 'Introduction',
+            path: '/',
             children: [
               ['/get-started', 'Get Started'],
               ['/configuration', 'Configuration'],
               ['/i18n', 'i18n']
+            ]
+          },
+          {
+            title: 'In-Depth',
+            path: '/',
+            collapsable: false, 
+            children: [
+              ['/events', 'Events'],
             ]
           }
         ]

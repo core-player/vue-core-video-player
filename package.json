@@ -13,6 +13,7 @@
     "vuepress": "^1.3.1"
   },
   "dependencies": {
-    "vue-core-video-player": "^0.1.2"
+    "@core-player/playcore-hls": "^0.1.0",
+    "vue-core-video-player": "^0.1.8"
   }
 }
