@@ -29,6 +29,14 @@ module.exports = {
             children: [
               ['/events', 'Events'],
             ]
+          },
+          {
+            title: 'Plugins',
+            path: '/',
+            collapsable: false, 
+            children: [
+              ['/core-hls', 'HLS'],
+            ]
           }
         ]
       },
@@ -42,6 +50,22 @@ module.exports = {
               ['/zh/get-started', '快速开始'],
               ['/zh/configuration', '基本配置'],
               ['/zh/i18n', 'i18n']
+            ]
+          },
+          {
+            title: '进阶',
+            path: '/',
+            collapsable: false, 
+            children: [
+              ['/events', 'Events'],
+            ]
+          },
+          {
+            title: '插件支持',
+            path: '/',
+            collapsable: false, 
+            children: [
+              ['/core-hls', 'HLS'],
             ]
           }
         ]
