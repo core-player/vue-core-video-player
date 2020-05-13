@@ -47,7 +47,7 @@ export default {
     return {
       source: videoSource2,
       cover: cover,
-      viewCore: [() => {console.log('view core test')} ]
+      viewCore: [ () => { console.log('view core test') } ]
     }
   },
   methods: {

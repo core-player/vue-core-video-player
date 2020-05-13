@@ -119,7 +119,6 @@ export default {
     } catch (err) {
       console.error(err)
     }
-    
   },
   beforeDestroy () {
     this.$player.destroy()
