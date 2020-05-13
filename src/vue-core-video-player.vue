@@ -57,6 +57,10 @@ export default {
     },
     core: {
       type: Function
+    },
+    viewCore: {
+      type: Array,
+      default: () => []
     }
   },
   computed: {
@@ -106,6 +110,15 @@ export default {
     })
     this._coreID = this.videoCore.id
     this.emit(EVENTS.LIFECYCLE_INITING, this.$player)
+    try {
+      this.viewCore.map(item => {
+        if (typeof item === 'function') {
+          item(this.$player, this.$player.config)
+        }
+      })
+    } catch (err) {
+      console.error(err)
+    }
   },
   beforeDestroy () {
     this.$player.destroy()
