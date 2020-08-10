@@ -8,7 +8,7 @@
       :playsinline="playsinline"
       :src="source"></video>
     <Layers />
-    <Dashboard :controls="controls" />
+    <Dashboard :controls="controls" :muted="muted" />
   </div>
 </template>
 
@@ -47,6 +47,10 @@ export default {
     title: String,
     cover: String,
     logo: String,
+    muted: {
+      type: Boolean,
+      default: false
+    },
     controls: {
       type: [String, Boolean],
       default: true

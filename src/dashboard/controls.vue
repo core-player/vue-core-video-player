@@ -5,7 +5,7 @@
       <time-span />
     </div>
     <div class="setting-control">
-      <volume-control />
+      <volume-control :muted="muted" />
       <picture-in-picture />
       <settings-control />
       <fullscreen-control />
@@ -32,7 +32,8 @@ export default {
     'picture-in-picture': PictureInPicture
   },
   props: {
-    visible: Boolean
+    visible: Boolean,
+    muted: Boolean,
   }
 }
 </script>
