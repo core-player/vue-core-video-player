@@ -26,7 +26,7 @@ export default {
   name: 'Volume',
   props: {
     visible: Boolean,
-    muted: Boolean,
+    muted: Boolean
   },
   mixins: [coreMixins],
   data () {

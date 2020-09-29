@@ -1,7 +1,7 @@
 import ee from 'event-emitter'
 import EVENTS from './constants/EVENTS'
 import * as types from './helper/type'
-import { addClass, removeClass } from './helper/dom'
+import { addClass, removeClass, registerFullScreenChangeListener } from './helper/dom'
 // import eventBus from './helper/eve'
 // import { getVideoCore } from './core'
 const _ee = ee()
@@ -26,6 +26,15 @@ const mixins = {
     this.on(EVENTS.PAUSE, () => {
       this.isPlaying = false
     })
+    registerFullScreenChangeListener((isFullScreen) => {
+      if (isFullScreen) {
+        addClass(this.$container, 'fullscreen')
+        this.emit('fullscreen', true)
+      } else {
+        removeClass(this.$container, 'fullscreen')
+        this.emit('fullscreen', false)
+      }
+    })
   },
   _events: {},
   methods: {
@@ -44,12 +53,9 @@ const mixins = {
       } else if (el.requestFullScreen) {
         el.requestFullscreen()
       }
-      addClass(el, 'fullscreen')
-      this.emit('fullscreen', true)
       this.fullscreen = true
     },
     cancelFullscreen (isManual) {
-      const el = this.$container
       // if (isManual) {
       //   this.emit('fullscreen', false)
       //   removeClass(el, 'fullscreen')
@@ -63,8 +69,6 @@ const mixins = {
       } else if (document.cancelFullScreen) {
         document.cancelFullScreen()
       }
-      removeClass(el, 'fullscreen')
-      this.emit('fullscreen', false)
       this.fullscreen = false
     },
     getFullscreen () {
