@@ -46,6 +46,7 @@ export default {
 <style lang="less">
 .vue-core-video-player-control.timespan {
   line-height: 30px;
-  width: 120px;
+  width: 140px;
+  font-family: Arial !important;
 }
 </style>
