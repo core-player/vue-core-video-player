@@ -104,3 +104,18 @@ export function drag (e, el, coor) {
     top
   }
 };
+
+export function registerFullScreenChangeListener (listener) {
+  document.addEventListener('fullscreenchange', () => {
+    listener(document.webkitIsFullScreen)
+  }, false)
+  document.addEventListener('mozfullscreenchange', () => {
+    listener(document.mozFullScreen)
+  }, false)
+  document.addEventListener('msFullscreenElement', () => {
+    listener(document.mozFullScreen)
+  }, false)
+  document.addEventListener('webkitfullscreenchange', () => {
+    listener(document.webkitIsFullScreen)
+  }, false)
+}

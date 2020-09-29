@@ -26,7 +26,7 @@ export default {
   },
   props: {
     controls: [Boolean, String],
-    muted: Boolean,
+    muted: Boolean
   },
   data () {
     return {

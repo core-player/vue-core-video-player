@@ -33,7 +33,7 @@ export default {
   },
   props: {
     visible: Boolean,
-    muted: Boolean,
+    muted: Boolean
   }
 }
 </script>
