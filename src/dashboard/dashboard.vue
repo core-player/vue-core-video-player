@@ -1,7 +1,7 @@
 <template>
   <div class="vcp-dashboard" autoplay v-show="show" ref="dashboard">
     <Progress />
-    <Controls />
+    <Controls :muted="muted" />
   </div>
 </template>
 
@@ -25,7 +25,8 @@ export default {
     Controls
   },
   props: {
-    controls: [Boolean, String]
+    controls: [Boolean, String],
+    muted: Boolean,
   },
   data () {
     return {

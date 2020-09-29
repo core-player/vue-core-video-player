@@ -25,14 +25,15 @@ import coreMixins from '../mixins'
 export default {
   name: 'Volume',
   props: {
-    visible: Boolean
+    visible: Boolean,
+    muted: Boolean,
   },
   mixins: [coreMixins],
   data () {
     return {
       panelShow: false,
       volume: 50,
-      isMuted: false
+      isMuted: this.muted
     }
   },
 
