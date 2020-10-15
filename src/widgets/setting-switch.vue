@@ -7,7 +7,6 @@
 export default {
   name: 'setting-switch',
   props: {
-    change: Function,
     openStatus: Boolean
   },
 
@@ -20,9 +19,7 @@ export default {
   methods: {
     toggle () {
       this.isOpen = !this.isOpen
-      if (typeof this.change === 'function') {
-        this.change(this.isOpen)
-      }
+      this.$emit('change', this.isOpen)
     },
     open () {
       this.isOpen = true
