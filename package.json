@@ -1,6 +1,6 @@
 {
   "name": "vue-core-video-player",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib ./src/index.js",
