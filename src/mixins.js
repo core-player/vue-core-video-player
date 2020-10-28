@@ -88,13 +88,23 @@ const mixins = {
     emit (event, res) {
       _ee.emit(event, res)
     },
+    off (event, callback) {
+      _ee.off(event, callback)
+    },
+    removeAllEvents () {
+      for (let item in this._events) {
+        _ee.off(item, this._events[item])
+      }
+    },
     addClass (cls) {
       this.$container.classList.remove(cls)
     },
     removeClass (cls) {
       this.$container.classList.remove(cls)
     }
-
+  },
+  beforeDestroy () {
+    this.removeAllEvents()
   }
 }
 
