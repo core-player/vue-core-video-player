@@ -102,7 +102,8 @@ export default {
       el: this.$refs['vcp-el'],
       eventEmitter: {
         on: this.on,
-        emit: this.emit
+        emit: this.emit,
+        off: this.off
       }
     })
     Object.values(EVENTS).forEach(item => {
