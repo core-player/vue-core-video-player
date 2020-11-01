@@ -92,9 +92,16 @@ class BaseVideoCore {
     this.checkSource(this.config.src)
     this._autoRegisterEvents()
     this._setVideoAttr()
+    this.setContainer()
     this.setSize()
     this.emit(EVENTS.LIFECYCLE_INITED)
     this._autoplay()
+  }
+
+  setContainer () {
+    if (isMobile) {
+      addClass(this.$el, 'mobile')
+    }
   }
 
   setSize () {

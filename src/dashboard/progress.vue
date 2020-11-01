@@ -191,4 +191,7 @@ export default {
     }
   }
 }
+.vcp-m-dashboard .vcp-progress-hover {
+  bottom: 0px;
+}
 </style>

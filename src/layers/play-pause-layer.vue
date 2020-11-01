@@ -1,24 +1,27 @@
 <template>
   <div class="vcp-layer play-pause-layer" v-show="show">
-    <div class="btn-control btn-play">
-      <svg xmlns="http://www.w3.org/2000/svg" width="41" height="47" viewBox="0 0 41 47"><path d="M23.5,0,47,41H0Z" transform="translate(41) rotate(90)" fill="#ff6060"/></svg>
+    <div v-if="!isPlaying" class="btn-control btn-play" @click="play">
+      <svg xmlns="http://www.w3.org/2000/svg" width="31" height="35" viewBox="0 0 41 47"><path d="M23.5,0,47,41H0Z" transform="translate(41) rotate(90)" fill="#ff6060"/></svg>
     </div>
-    <div class="btn-control btn-pause">
-      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="48" viewBox="0 0 36 48"><g transform="translate(-950 -398)"><rect width="12" height="48" transform="translate(950 398)" fill="#ff6060"/><rect width="12" height="48" transform="translate(974 398)" fill="#ff6060"/></g></svg>
+    <div v-if="isPlaying" class="btn-control btn-pause" @click="pause">
+      <svg xmlns="http://www.w3.org/2000/svg" width="27" height="36" viewBox="0 0 36 48"><g transform="translate(-950 -398)"><rect width="12" height="48" transform="translate(950 398)" fill="#ff6060"/><rect width="12" height="48" transform="translate(974 398)" fill="#ff6060"/></g></svg>
     </div>
   </div>
 </template>
 
 <script>
+import { isMobile } from '../helper/util.js'
+import coreMixins from '../mixins'
 
 export default {
   name: 'PlayPauseLayer',
+  mixins: [coreMixins],
   props: {
     visible: Boolean
   },
   data () {
     return {
-      show: false
+      show: isMobile
     }
   }
 }
@@ -43,12 +46,12 @@ export default {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 96px;
-  height: 96px;
-  margin-left: -48px;
-  margin-top: -48px;
+  width: 60px;
+  height: 60px;
+  margin-left: -30px;
+  margin-top: -30px;
   background-color: #fff;
-  border-radius: 48px;
+  border-radius: 30px;
 }
 .play-pause-layer .btn-control:before{
   content: '';
@@ -56,17 +59,14 @@ export default {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 120px;
-  height: 120px;
-  margin-left: -60px;
-  margin-top: -60px;
-  border-radius: 60px;
+  width: 72px;
+  height: 72px;
+  margin-left: -36px;
+  margin-top: -36px;
+  border-radius: 36px;
   background-color: rgba(255,255,255, .25);
 }
 .play-pause-layer .btn-play svg{
   margin-left: 10px;
-}
-.play-pause-layer .btn-pause{
-  display: none;
 }
 </style>

@@ -15,7 +15,7 @@ export function toggle (el, className) {
   }
 };
 
-export function swichChildClass (el, childSelector, className, tellFunc) {
+export function switchChildClass (el, childSelector, className, tellFunc) {
   const children = el.querySelectorAll(childSelector)
   for (let i = 0; i < children.length; i++) {
     const item = children[i]
