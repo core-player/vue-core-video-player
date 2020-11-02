@@ -1,5 +1,5 @@
 <template>
-  <div class="vue-core-video-player-control">
+  <div v-if="!disable" class="vue-core-video-player-control">
     <div v-if="!fullscreen" class="btn-control btn-fullscreen" @click="enterFullscreen">
       <svg xmlns="http://www.w3.org/2000/svg" width="28" height="20" viewBox="0 0 28 20"><g fill="#fff"><g data-name="6 7"><g data-name="4 1"><path data-name="7" d="M16 0h10v2H16z"/><path data-name="8" d="M26 0h2v6h-2z"/></g><g data-name="5 1"><path data-name="9" d="M18 18h10v2H18z"/><path data-name="10" d="M26 14h2v6h-2z"/></g></g><g data-name="6 8"><g data-name="4 1"><path data-name="7" d="M12 20H2v-2h10z"/><path data-name="8" d="M2 20H0v-6h2z"/></g><g data-name="5 1"><path data-name="9" d="M10 2H0V0h10z"/><path data-name="10" d="M2 6H0V0h2z"/></g></g></g></svg>
       <div class="tips">{{$t('dashboard.btn.fullscreen')}}</div>
@@ -14,12 +14,18 @@
 <script>
 // import EVENTS from '../constants/EVENTS'
 import coreMixins from '../mixins'
+import { isMobile, isApple } from '../helper/util'
 
 export default {
   name: 'Fullscreen',
   mixins: [coreMixins],
   props: {
     visible: Boolean
+  },
+  data () {
+    return {
+      disable: (isMobile && isApple)
+    }
   }
 }
 </script>

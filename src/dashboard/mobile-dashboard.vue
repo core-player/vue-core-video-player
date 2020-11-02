@@ -111,10 +111,7 @@ export default {
   background: linear-gradient(to top ,rgba(0,0,0, .7), rgba(0,0,0, 0));
 }
 .fullscreen .vcp-m-dashboard {
-  bottom: 60px;
-  width: 1182px;
-  left: 50%;
-  margin-left: -591px;
+  bottom: 12px;
 }
 .small  .vcp-m-dashboard{
   height: 49px;

@@ -196,6 +196,7 @@ export default {
   }
 }
 .vcp-m-dashboard .settings-control .btn-control-panel {
+  z-index: 20000;
   position: fixed;
   left: 0px;
   right: 0px;

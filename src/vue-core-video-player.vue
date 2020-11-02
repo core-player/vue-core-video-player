@@ -46,7 +46,7 @@ export default {
     },
     playsinline: {
       type: Boolean,
-      default: false
+      default: true
     },
     title: String,
     cover: String,

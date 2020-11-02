@@ -1,9 +1,9 @@
 <template>
   <div class="vue-core-video-player-layers">
     <cover-layer></cover-layer>
-    <play-pause-layer></play-pause-layer>
     <logo-layer></logo-layer>
     <title-layer></title-layer>
+    <play-pause-layer></play-pause-layer>
     <loading-layer></loading-layer>
     <error-layer></error-layer>
   </div>

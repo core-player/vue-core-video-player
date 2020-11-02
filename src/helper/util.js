@@ -198,14 +198,14 @@ export const isMSESupported = () => {
 }
 
 export function isDebug () {
-  return localStorage.__vrplayer_core
+  return localStorage._vcpDebug
 }
 
 export function setDebug (value) {
   if (value) {
-    localStorage.__vrplayer_debug = true
+    localStorage._vcpDebug = true
   } else {
-    localStorage.__vrplayer_debug = ''
+    localStorage._vcpDebug = ''
   }
 }
 export const isNodeEnv = () => {
