@@ -198,23 +198,23 @@ export const isMSESupported = () => {
 }
 
 export function isDebug () {
-  return localStorage.__vrplayer_core
+  return localStorage._vcpDebug
 }
 
 export function setDebug (value) {
   if (value) {
-    localStorage.__vrplayer_debug = true
+    localStorage._vcpDebug = true
   } else {
-    localStorage.__vrplayer_debug = ''
+    localStorage._vcpDebug = ''
   }
 }
 export const isNodeEnv = () => {
   return typeof localStorage !== 'object' && typeof navigator !== 'object'
 }
 
-export const isMobile = isMobileJS.any
-export const isAndroid = isMobileJS.android
-export const isApple = isMobileJS.apple && isMobileJS.apple.device
+export const isMobile = isMobileJS(ua).any
+export const isAndroid = isMobileJS(ua).android
+export const isApple = isMobileJS(ua).apple && isMobileJS(ua).apple.device
 export const isSafari = isApple && _isSafari()
 export const isTencentGroup = /MQQBrowser/i.test(ua)
 export const isUC = /ucbrowser/i.test(ua)

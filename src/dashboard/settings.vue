@@ -195,4 +195,20 @@ export default {
     }
   }
 }
+.vcp-m-dashboard .settings-control .btn-control-panel {
+  z-index: 20000;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  .current-panel {
+    width: 100%;
+  }
+  .speed-list {
+    margin-left: 20px;
+  }
+  .resolution-list {
+    margin-left: 20px;
+  }
+}
 </style>

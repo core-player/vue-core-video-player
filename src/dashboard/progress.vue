@@ -191,4 +191,19 @@ export default {
     }
   }
 }
+.vcp-m-dashboard .vcp-progress-hover {
+  bottom: 0px;
+  .vcp-progress {
+    height: 3px;
+  }
+  .vcp-progress-played{
+    .thumb-drag{
+      background-color: #ff6060;
+      &:before{
+        background-color: #ff6060;
+        opacity: 0.25;
+      }
+    }
+  }
+}
 </style>

@@ -79,4 +79,11 @@ export default {
   position: relative;
   margin: 80px auto;
 }
+
+@media all and (max-width: 768px) {
+  #app .test-player-wrap {
+    width: 100%;
+    height: auto;
+  }
+}
 </style>

@@ -11,6 +11,9 @@
   div {
     user-select: none;
   }
+  svg {
+    user-select: none;
+  }
 }
 
 .vcp-icon{
@@ -24,6 +27,9 @@
   margin-right: 20px;
   font-size: 13px;
   color: #fff;
+}
+.vcp-m-dashboard .vue-core-video-player-control {
+  margin-right: 10px;
 }
 .btn-control-panel{
   position: absolute;
@@ -71,6 +77,10 @@
   width: 30px;
   height: 30px;
   cursor: pointer;
+  &:focus {
+    background: none;
+    outline-style: none;
+  }
   .tips {
     display: none;
     position: absolute;

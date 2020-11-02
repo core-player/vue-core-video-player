@@ -8,7 +8,8 @@
       :playsinline="playsinline"
       :src="source"></video>
     <Layers />
-    <Dashboard :controls="controls" :muted="muted" />
+    <Dashboard v-if="!isMobile" :controls="controls" :muted="muted" />
+    <MobileDashboard v-if="isMobile" :controls="controls" :muted="muted" />
   </div>
 </template>
 
@@ -20,7 +21,9 @@ import { EVENTS, DEFAULT_CONFIG } from './constants'
 import { parseMediaList } from './helper/media'
 import { initVideoCore } from './core'
 import coreMixins from './mixins'
+import { isMobile } from './helper/util.js'
 import Dashboard from './dashboard/dashboard.vue'
+import MobileDashboard from './dashboard/mobile-dashboard.vue'
 import Layers from './layers/layers.vue'
 
 export default {
@@ -28,6 +31,7 @@ export default {
   mixins: [coreMixins],
   components: {
     Dashboard,
+    MobileDashboard,
     Layers
   },
   props: {
@@ -42,7 +46,7 @@ export default {
     },
     playsinline: {
       type: Boolean,
-      default: false
+      default: true
     },
     title: String,
     cover: String,
@@ -67,6 +71,13 @@ export default {
       default: () => []
     }
   },
+
+  data () {
+    return {
+      isMobile: isMobile
+    }
+  },
+
   computed: {
     source: function () {
       const { src } = this
