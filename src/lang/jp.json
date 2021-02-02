@@ -8,7 +8,8 @@
       "mute": "ミュート",
       "unmute": "ミュートを解除",
       "back": "戻る",
-      "pip": "ピクチャインピクチャ"
+      "pip": "ピクチャインピクチャ",
+      "settings": "設定"
     },
     "settings" : {
       "autoplay": "自動再生",
