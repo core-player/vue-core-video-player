@@ -8,7 +8,8 @@
       "mute": "静音",
       "unmute": "取消静音",
       "back": "返回",
-      "pip": "画中画模式"
+      "pip": "画中画模式",
+      "settings": "设置"
     },
     "settings" : {
       "autoplay": "自动播放",
