@@ -3,7 +3,7 @@
     <video
       ref="vcp-video"
       :title="title"
-      :cover="cover"
+      :poster="cover"
       :loop="loop"
       :playsinline="playsinline"
       :src="source"></video>
