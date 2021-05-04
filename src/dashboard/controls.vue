@@ -6,7 +6,7 @@
     </div>
     <div class="setting-control">
       <volume-control :muted="muted" />
-      <picture-in-picture />
+      <picture-in-picture :pip-visible="pipVisible" />
       <settings-control />
       <fullscreen-control />
     </div>
@@ -33,7 +33,8 @@ export default {
   },
   props: {
     visible: Boolean,
-    muted: Boolean
+    muted: Boolean,
+    pipVisible: Boolean
   }
 }
 </script>
