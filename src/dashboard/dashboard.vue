@@ -1,7 +1,7 @@
 <template>
   <div class="vcp-dashboard" autoplay v-show="show" ref="dashboard">
     <Progress />
-    <Controls :muted="muted" />
+    <Controls :muted="muted" :pip-visible="pipVisible" />
   </div>
 </template>
 
@@ -26,7 +26,8 @@ export default {
   },
   props: {
     controls: [Boolean, String],
-    muted: Boolean
+    muted: Boolean,
+    pipVisible: Boolean
   },
   data () {
     return {
