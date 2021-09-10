@@ -1,5 +1,5 @@
 {
-  "name": "vue-core-video-player",
+  "name": "@manhnguyen98/vue-core-video-player",
   "version": "0.2.0",
   "scripts": {
     "dev": "vue-cli-service serve",
