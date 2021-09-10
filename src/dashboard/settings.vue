@@ -10,13 +10,13 @@
             {{$t('dashboard.settings.autoplay')}}
           </span>
           <div class="item-control">
-            <widgets-switch ref="autoplaySwitch" @change="changeAutoplaySettings"></widgets-switch>
+            <widgets-switch :playerKey="playerKey" ref="autoplaySwitch" @change="changeAutoplaySettings"></widgets-switch>
           </div>
         </li>
         <li>
           <span class="item-name" >{{$t('dashboard.settings.loop')}}</span>
           <div class="item-control">
-            <widgets-switch ref="loopSwitch" @change="changeLoopSettings"></widgets-switch>
+            <widgets-switch :playerKey="playerKey" ref="loopSwitch" @change="changeLoopSettings"></widgets-switch>
           </div>
         </li>
         <li>
@@ -31,7 +31,7 @@
           <div class="item-control" v-if="resolution" @click="showResolutionPanel">
             <span>{{resolution}}</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="5.963" height="11.568" viewBox="0 0 5.963 11.568"><path data-name="4" d="M.809.616l3.9 5-3.9 5.368" fill="none" stroke="#fff" stroke-width="2"/></svg>
-           </div>
+          </div>
         </li>
       </ul>
       <ul class="resolution-list animated fadeInRight" v-show="resolutionListPanel">
@@ -64,11 +64,18 @@ import coreMixins from '../mixins'
 export default {
   name: 'Settings',
   props: {
-    visible: Boolean
+    visible: Boolean,
+    playerKey: {
+      type: String,
+      default: ''
+    }
   },
   mixins: [coreMixins],
   components: {
     'widgets-switch': SettingSwitch
+  },
+  created () {
+    this._playerKey = this.playerKey
   },
   data () {
     return {

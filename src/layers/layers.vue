@@ -1,11 +1,11 @@
 <template>
   <div class="vue-core-video-player-layers">
-    <cover-layer></cover-layer>
-    <logo-layer></logo-layer>
-    <title-layer></title-layer>
-    <play-pause-layer></play-pause-layer>
-    <loading-layer></loading-layer>
-    <error-layer></error-layer>
+    <cover-layer :playerKey="playerKey"></cover-layer>
+    <logo-layer :playerKey="playerKey"></logo-layer>
+    <title-layer :playerKey="playerKey"></title-layer>
+    <play-pause-layer :playerKey="playerKey"></play-pause-layer>
+    <loading-layer :playerKey="playerKey"></loading-layer>
+    <error-layer :playerKey="playerKey"></error-layer>
   </div>
 </template>
 
@@ -28,7 +28,11 @@ export default {
     ErrorLayer
   },
   props: {
-    visible: Boolean
+    visible: Boolean,
+    playerKey: {
+      type: String,
+      default: ''
+    }
   }
 }
 </script>

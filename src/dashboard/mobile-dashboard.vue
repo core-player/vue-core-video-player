@@ -1,7 +1,7 @@
 <template>
   <div class="vcp-m-dashboard" autoplay v-show="show" ref="dashboard">
-    <MobileControls :muted="muted" />
-    <Progress />
+    <MobileControls :muted="muted" :playerKey="playerKey"/>
+    <Progress :playerKey="playerKey"/>
   </div>
 </template>
 
@@ -26,7 +26,11 @@ export default {
   },
   props: {
     controls: [Boolean, String],
-    muted: Boolean
+    muted: Boolean,
+    playerKey: {
+      type: String,
+      default: ''
+    }
   },
   data () {
     return {
@@ -34,6 +38,9 @@ export default {
     }
   },
   mixins: [coreMixins],
+  created () {
+    this._playerKey = this.playerKey
+  },
   methods: {
     showDashboard (delay) {
       window.clearTimeout(this._hideTimeout)

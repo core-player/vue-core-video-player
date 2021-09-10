@@ -26,6 +26,15 @@ const showTimeout = 600
 export default {
   name: 'LoadingLayer',
   mixins: [coreMixins],
+  props: {
+    playerKey: {
+      type: String,
+      default: ''
+    }
+  },
+  beforeMount () {
+    this._playerKey = this.playerKey
+  },
   data () {
     return {
       show: false
