@@ -14,16 +14,23 @@ import { secondsToTime } from '../helper/util'
 export default {
   name: 'TimeSpan',
   props: {
-    visible: Boolean
+    visible: Boolean,
+    playerKey: {
+      type: String,
+      default: ''
+    }
   },
   mixins: [coreMixins],
+  created () {
+    this._playerKey = this.playerKey
+  },
   data () {
     return {
       currentTime: '00:00:00',
       duration: '--:--:--'
     }
   },
-  created () {
+  beforeMount () {
     this.on(EVENTS.TIMEUPDATE, () => {
       const currentTime = this.$player.getCurrentTime()
       if (!currentTime) {

@@ -11,11 +11,20 @@ import coreMixins from '../mixins'
 export default {
   name: 'CoverLayer',
   mixins: [coreMixins],
+  props: {
+    playerKey: {
+      type: String,
+      default: ''
+    }
+  },
   data () {
     return {
       title: '',
       show: false
     }
+  },
+  created () {
+    this._playerKey = this.playerKey
   },
   mounted () {
     this.on(EVENTS.LIFECYCLE_INITING, () => {

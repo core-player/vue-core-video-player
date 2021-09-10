@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib ./src/index.js",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "publish": "npm publish --access public"
   },
   "main": "dist/vue-core-video-player.common.js",
   "repository": {
