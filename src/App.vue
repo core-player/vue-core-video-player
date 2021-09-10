@@ -2,6 +2,7 @@
   <div id="app">
     <div class="test-player-wrap">
       <vue-core-video-player @play="playFunc" loop :src="source" title="《Your Name》OST Sparkle" :view-core="viewCore" autoplay></vue-core-video-player>
+      <vue-core-video-player @play="playFunc" loop :src="source2" title="《Your Name》OST Sparkle" :view-core="viewCore" autoplay></vue-core-video-player>
     </div>
     <button @click="change"> Change Source</button>
   </div>
@@ -38,6 +39,7 @@ const videoSource = [
 // ]
 
 const videoSource2 = 'https://media.vued.vanthink.cn/the_garden_of_words_trailer_english__1080p.mp4'
+const videoSource3 = 'https://media.vued.vanthink.cn/sparkle_your_name_am720p.webm'
 
 const cover = 'https://img1.wxzxzj.com/maxresdefault.jpg'
 
@@ -45,7 +47,8 @@ export default {
   name: 'app',
   data () {
     return {
-      source: videoSource2,
+      source: videoSource3,
+      source2: videoSource2,
       cover: cover,
       viewCore: [ () => { console.log('view core test') } ]
     }

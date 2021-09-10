@@ -12,10 +12,11 @@ const mixins = {
       show: false,
       fullscreen: false,
       isPlaying: false,
+      _playerKey: '',
       _coreID: ''
     }
   },
-  created () {
+  beforeMount () {
     this.on(EVENTS.LIFECYCLE_INITING, ($player) => {
       this.$player = $player
       this.$container = this.$player.$el
@@ -75,21 +76,26 @@ const mixins = {
       return (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement)
     },
     on (event, callback) {
+      let eventId
       if (types.isString(event)) {
-        this._events[event] = callback
-        _ee.on(event, callback)
+        eventId = this.eventID(event)
+        this._events[eventId] = callback
+        _ee.on(eventId, callback)
       } else if (Array.isArray(event)) {
         event.forEach((item) => {
-          this._events[item] = callback
-          _ee.on(item, callback)
+          eventId = this.eventID(item)
+          this._events[eventId] = callback
+          _ee.on(eventId, callback)
         })
       }
     },
     emit (event, res) {
-      _ee.emit(event, res)
+      const eventId = this.eventID(event)
+      _ee.emit(eventId, res)
     },
     off (event, callback) {
-      _ee.off(event, callback)
+      const eventId = this.eventID(event)
+      _ee.off(eventId, callback)
     },
     removeAllEvents () {
       for (let item in this._events) {
@@ -101,6 +107,9 @@ const mixins = {
     },
     removeClass (cls) {
       this.$container.classList.remove(cls)
+    },
+    eventID (event) {
+      return `${event}-${this._playerKey}`
     }
   },
   beforeDestroy () {

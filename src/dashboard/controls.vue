@@ -1,14 +1,14 @@
 <template>
   <div class="vcp-controls">
     <div class="playback-control">
-      <play-pause-cntrol />
-      <time-span />
+      <play-pause-cntrol :playerKey="playerKey"/>
+      <time-span :playerKey="playerKey"/>
     </div>
     <div class="setting-control">
-      <volume-control :muted="muted" />
-      <picture-in-picture />
-      <settings-control />
-      <fullscreen-control />
+      <volume-control :muted="muted" :playerKey="playerKey"/>
+      <picture-in-picture :playerKey="playerKey"/>
+      <settings-control :playerKey="playerKey"/>
+      <fullscreen-control :playerKey="playerKey"/>
     </div>
   </div>
 </template>
@@ -33,7 +33,11 @@ export default {
   },
   props: {
     visible: Boolean,
-    muted: Boolean
+    muted: Boolean,
+    playerKey: {
+      type: String,
+      default: ''
+    }
   }
 }
 </script>

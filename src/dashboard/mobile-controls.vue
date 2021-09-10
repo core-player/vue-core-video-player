@@ -1,12 +1,12 @@
 <template>
   <div class="vcp-controls">
     <div class="playback-control">
-      <time-span />
+      <time-span :playerKey="playerKey"/>
     </div>
     <div class="setting-control">
-      <picture-in-picture />
-      <settings-control />
-      <fullscreen-control />
+      <picture-in-picture :playerKey="playerKey"/>
+      <settings-control :playerKey="playerKey"/>
+      <fullscreen-control :playerKey="playerKey"/>
     </div>
   </div>
 </template>
@@ -27,7 +27,11 @@ export default {
   },
   props: {
     visible: Boolean,
-    muted: Boolean
+    muted: Boolean,
+    playerKey: {
+      type: String,
+      default: ''
+    }
   }
 }
 </script>

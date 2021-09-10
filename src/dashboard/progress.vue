@@ -18,16 +18,23 @@ import { drag } from '../helper/dom'
 export default {
   name: 'Progress',
   props: {
-    visible: Boolean
+    visible: Boolean,
+    playerKey: {
+      type: String,
+      default: ''
+    }
   },
   mixins: [coreMixins],
+  created () {
+    this._playerKey = this.playerKey
+  },
   data () {
     return {
       progress: 0.00,
       bufferProgress: 0.00
     }
   },
-  created () {
+  beforeMount () {
     this.on(EVENTS.TIMEUPDATE, () => {
       if (this._dragEl) {
         return
