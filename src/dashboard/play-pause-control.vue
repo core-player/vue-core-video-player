@@ -18,7 +18,14 @@ export default {
   name: 'PlayPauseControl',
   mixins: [coreMixins],
   props: {
-    visible: Boolean
+    visible: Boolean,
+    playerKey: {
+      type: String,
+      default: ''
+    }
+  },
+  created () {
+    this._playerKey = this.playerKey
   }
 }
 </script>

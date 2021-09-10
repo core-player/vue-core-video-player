@@ -26,7 +26,11 @@ export default {
   name: 'PictureInPicture',
   mixins: [coreMixins],
   props: {
-    visible: Boolean
+    visible: Boolean,
+    playerKey: {
+      type: String,
+      default: ''
+    }
   },
   data () {
     return {
@@ -37,6 +41,7 @@ export default {
     if ((_isSupportPIP)) {
       this.show = true
     }
+    this._playerKey = this.playerKey
   },
   methods: {
     requestPictureInPicture () {

@@ -26,9 +26,16 @@ export default {
   name: 'Volume',
   props: {
     visible: Boolean,
-    muted: Boolean
+    muted: Boolean,
+    playerKey: {
+      type: String,
+      default: ''
+    }
   },
   mixins: [coreMixins],
+  created () {
+    this._playerKey = this.playerKey
+  },
   data () {
     return {
       panelShow: false,

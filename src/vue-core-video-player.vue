@@ -7,9 +7,9 @@
       :loop="loop"
       :playsinline="playsinline"
       :src="source"></video>
-    <Layers />
-    <Dashboard v-if="!isMobile" :controls="controls" :muted="muted" />
-    <MobileDashboard v-if="isMobile" :controls="controls" :muted="muted" />
+    <Layers :playerKey="playerKey"/>
+    <Dashboard v-if="!isMobile" :controls="controls" :muted="muted" :playerKey="playerKey"/>
+    <MobileDashboard v-if="isMobile" :controls="controls" :muted="muted" :playerKey="playerKey"/>
   </div>
 </template>
 
@@ -21,7 +21,7 @@ import { EVENTS, DEFAULT_CONFIG } from './constants'
 import { parseMediaList } from './helper/media'
 import { initVideoCore } from './core'
 import coreMixins from './mixins'
-import { isMobile } from './helper/util.js'
+import { isMobile, guid } from './helper/util.js'
 import Dashboard from './dashboard/dashboard.vue'
 import MobileDashboard from './dashboard/mobile-dashboard.vue'
 import Layers from './layers/layers.vue'
@@ -71,10 +71,10 @@ export default {
       default: () => []
     }
   },
-
   data () {
     return {
-      isMobile: isMobile
+      isMobile: isMobile,
+      playerKey: 'key-' + guid()
     }
   },
 
@@ -104,6 +104,9 @@ export default {
       }
       return url
     }
+  },
+  created () {
+    this._playerKey = this.playerKey
   },
   mounted () {
     // const self = this
